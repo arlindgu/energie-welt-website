@@ -14,7 +14,7 @@ name: Deploy
 on:
   workflow_dispatch:
   push:
-    branches: [master, main, gitops-deploy]
+    branches: [master, main]
 
 jobs:
   build-and-push:
