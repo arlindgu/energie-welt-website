@@ -1,0 +1,49 @@
+---
+import { ThemeToggle } from "@/components/ThemeToggle"
+---
+
+<header
+  class="fixed top-0 right-0 left-0 z-50 bg-background"
+>
+  <nav class="mx-auto grid h-16 max-w-6xl grid-cols-3 items-center">
+    <div class="flex justify-start">
+      <a href="/">
+        <img
+          src="/logo_light.svg"
+          alt="EnergieWelt"
+          class="block h-7 w-auto dark:hidden"
+        />
+        <img
+          src="/logo_dark.svg"
+          alt="EnergieWelt"
+          class="hidden h-7 w-auto dark:block"
+        />
+      </a>
+    </div>
+
+    <div class="flex items-center gap-8">
+      <a
+        href="#about"
+        class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+      >
+        Über uns
+      </a>
+      <a
+        href="#services"
+        class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+      >
+        Leistungen
+      </a>
+      <a
+        href="#contact"
+        class="text-sm text-muted-foreground transition-colors hover:text-foreground"
+      >
+        Kontakt
+      </a>
+    </div>
+
+    <div class="flex justify-end">
+      <ThemeToggle client:load />
+    </div>
+  </nav>
+</header>

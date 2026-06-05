@@ -1,0 +1,80 @@
+---
+import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+
+import solarIcon from "@/assets/svgs/solar-icon.svg"
+import homeIcon from "@/assets/svgs/home-icon.svg"
+import builtIcon from "@/assets/svgs/built-icon.svg"
+import estateKey from "@/assets/svgs/estate-key.svg"
+import computer from "@/assets/svgs/computer.svg"
+import knowledge from "@/assets/svgs/knowledge.svg"
+
+const services = [
+    {
+        title: "Erneuerbare Energieanlagen",
+        description:
+            "Planung, Entwicklung, Errichtung und Betrieb von Anlagen im Bereich erneuerbarer Energien – von der Konzeption bis zum Rückbau.",
+        icon: solarIcon,
+    },
+    {
+        title: "Smart Home & Gebäudetechnik",
+        description:
+            "Integrierte SmartHome-Lösungen und moderne Gebäudetechnik für energieeffizientes Wohnen und Arbeiten.",
+        icon: homeIcon,
+    },
+    {
+        title: "Bau & Infrastruktur",
+        description:
+            "Planung, Projektierung und Ausführung von Bauvorhaben rund um Energieanlagen, Gebäudetechnik und Infrastruktur.",
+        icon: builtIcon,
+    },
+    {
+        title: "Immobilien & Projekte",
+        description:
+            "Errichtung, Sanierung, Verwaltung und Vermarktung von Immobilien sowie Erwerb und Betrieb von Energie- und Immobilienprojekten.",
+        icon: estateKey,
+    },
+    {
+        title: "Digitale Lösungen & Plattformen",
+        description:
+            "Entwicklung und Betrieb von Software, digitalen Plattformen und Tools zur Steuerung und Optimierung von Energie- und Bauprojekten.",
+        icon: computer,
+    },
+    {
+        title: "Beratung & Schulung",
+        description:
+            "Fachkundige Beratungs- und Schulungsdienstleistungen in den Bereichen erneuerbare Energien, Bau, Immobilien und digitale Lösungen.",
+        icon: knowledge,
+    },
+]
+---
+
+<section id="services" class="dark bg-background w-full py-28 px-6">
+    <div class="max-w-6xl mx-auto">
+
+        <div class="mb-16">
+            <h2 class="font-heading text-4xl md:text-5xl font-semibold text-foreground leading-tight mb-4">
+                Unsere Leistungen
+            </h2>
+            <p class="text-muted-foreground max-w-lg leading-relaxed">
+                Von der Beratung bis zur Umsetzung – wir bieten alles aus einer Hand.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {services.map((service) => (
+                <Card>
+                    <CardHeader>
+                        <img
+                            src={service.icon.src}
+                            alt={service.title}
+                            class="h-12 w-auto object-contain mb-4 self-start"
+                        />
+                        <CardTitle className="font-heading text-lg">{service.title}</CardTitle>
+                        <CardDescription>{service.description}</CardDescription>
+                    </CardHeader>
+                </Card>
+            ))}
+        </div>
+
+    </div>
+</section>
