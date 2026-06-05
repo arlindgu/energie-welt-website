@@ -10,6 +10,8 @@ name: Deploy
 #     -> on merge ArgoCD syncs.
 on:
   workflow_dispatch:
+  push:
+    branches: [master, main, gitops-deploy]
 
 jobs:
   test:
