@@ -1,0 +1,60 @@
+---
+import solarIcon from "@/assets/svgs/solar-icon.svg?raw"
+import homeIcon from "@/assets/svgs/home-icon.svg?raw"
+import computerIcon from "@/assets/svgs/computer.svg?raw"
+
+const content = [
+  {
+    title: "Erneuerbare Energieanlagen",
+    image: "/services-1.jpg",
+    icon: solarIcon,
+  },
+  {
+    title: "Smart Home & Gebäudetechnik",
+    image: "/services-2.jpg",
+    icon: homeIcon,
+  },
+  {
+    title: "Digitale Lösungen & Plattformen",
+    image: "/services-3.jpg",
+    icon: computerIcon,
+  },
+]
+---
+
+<section class="py-16 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col items-center gap-4">
+      <h2 class="text-center font-bold uppercase">Unsere Dienstleistungen</h2>
+      <p class="text-center font-heading text-4xl uppercase">
+        Massgeschneiderte Lösungen.
+        <br />
+        Für eine nachhaltige Zukunft.
+      </p>
+      <p class="max-w-2xl text-center">
+        Von der Planung bis zum Betrieb bieten wir umfassende Dienstleistungen
+        in den Bereichen erneuerbare Energieanlagen, Smart Home & Gebäudetechnik
+        sowie digitale Lösungen & Plattformen.
+      </p>
+    </div>
+
+    <div class="mt-12 flex flex-col gap-4 lg:flex lg:flex-row">
+      {
+        content.map((item) => (
+          <div class="relative h-96 w-full lg:flex-1 overflow-hidden rounded-2xl">
+            <img src={item.image} alt={item.title} class="absolute inset-0 w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div class="absolute right-0 bottom-0 left-0 flex items-end justify-between p-6">
+              <div class="flex flex-col gap-3">
+                <div class="w-12 h-12 text-brand" set:html={item.icon} />
+                <h3 class="font-heading text-xl font-semibold text-white">
+                  {item.title}
+                </h3>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

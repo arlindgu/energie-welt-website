@@ -1,0 +1,58 @@
+---
+import { site } from "@/config/site"
+---
+
+<footer class="bg-foreground text-background overflow-hidden px-6">
+
+  <div class="max-w-6xl mx-auto pt-20 pb-8">
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+
+      <div class="bg-foreground">
+        <img src="/logo_dark.svg" alt={site.name} class="h-6 w-auto mb-6" />
+        <p class="text-background/50 text-sm leading-relaxed">
+          {site.description}
+        </p>
+      </div>
+
+      <div class="bg-foreground">
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand mb-6">Navigation</p>
+        <ul class="flex flex-col gap-3">
+          <li><a href="/#about" class="text-sm text-background/60 hover:text-background transition-colors">Über uns</a></li>
+          <li><a href="/#services" class="text-sm text-background/60 hover:text-background transition-colors">Leistungen</a></li>
+          <li><a href="/kontakt" class="text-sm text-background/60 hover:text-background transition-colors">Kontakt</a></li>
+          <li><a href="/impressum" class="text-sm text-background/60 hover:text-background transition-colors">Impressum</a></li>
+          <li><a href="/datenschutz" class="text-sm text-background/60 hover:text-background transition-colors">Datenschutz</a></li>
+        </ul>
+      </div>
+
+      <div class="bg-foreground">
+        <p class="text-xs font-semibold uppercase tracking-widest text-brand mb-6">Kontakt</p>
+        <ul class="flex flex-col gap-3">
+          <li>
+            <a href={`mailto:${site.contact.email}`} class="text-sm text-background/60 hover:text-background transition-colors break-all">
+              {site.contact.email}
+            </a>
+          </li>
+          <li>
+            <a href={site.contact.phoneHref} class="text-sm text-background/60 hover:text-background transition-colors">
+              {site.contact.phone}
+            </a>
+          </li>
+          <li class="text-sm text-background/60">
+            {site.address.street}<br />
+            {site.address.city}<br />
+            {site.address.country}
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 mt-px">
+      <p class="text-xs text-background/30">© {new Date().getFullYear()} {site.legal.company}. Alle Rechte vorbehalten.</p>
+    </div>
+
+  </div>
+
+</footer>

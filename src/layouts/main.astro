@@ -1,18 +1,28 @@
 ---
 import "@/styles/global.css"
+import { Font } from "astro:assets"
+import Navbar from "@/components/Navbar.astro"
+import Footer from "@/components/Footer.astro"
 ---
 
-<html lang="en">
+<html lang="de">
   <head>
+    <Font cssVariable="--font-clash-display" />
+    <Font cssVariable="--font-archivo" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap"
+    />
     <title>EnergieWelt</title>
   </head>
   <body>
-    <main >
+    <Navbar />
+    <main>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>
