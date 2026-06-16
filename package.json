@@ -13,9 +13,11 @@
     "typecheck": "astro check"
   },
   "dependencies": {
+    "@astrojs/node": "^10.1.4",
     "@fontsource-variable/geist": "^5.2.9",
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^6.4.7",
+    "resend": "^6.12.4",
     "tailwindcss": "^4.2.1",
     "vite": "^7"
   },
