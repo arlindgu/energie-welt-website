@@ -2,6 +2,7 @@
 import "@/styles/global.css"
 import { Font } from "astro:assets"
 import Navbar from "@/components/Navbar.astro"
+import Footer from "@/components/Footer.astro"
 ---
 
 <html lang="de">
@@ -16,18 +17,12 @@ import Navbar from "@/components/Navbar.astro"
       href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap"
     />
     <title>EnergieWelt</title>
-    <script is:inline>
-      const saved = localStorage.getItem("theme")
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-      if (saved === "dark" || (!saved && prefersDark)) {
-        document.documentElement.classList.add("dark")
-      }
-    </script>
   </head>
   <body>
     <Navbar />
     <main>
       <slot />
     </main>
+    <Footer />
   </body>
 </html>

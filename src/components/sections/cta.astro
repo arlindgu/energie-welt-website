@@ -1,5 +1,5 @@
 ---
-
+import { site } from "@/config/site"
 ---
 
 <section class="w-full bg-background py-28 px-6">
@@ -12,11 +12,11 @@
             und erfahren Sie, wie EnergieWelt Ihnen helfen kann.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="mailto:kontakt@energiewelt.de" class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
+            <a href={`mailto:${site.contact.email}`} class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
                 Jetzt Kontakt aufnehmen
             </a>
-            <a href="tel:+4900000000" class="inline-flex items-center justify-center px-8 py-3 rounded-full border border-border text-foreground text-sm font-medium hover:bg-muted transition-colors">
-                +49 (0) 000 000 000
+            <a href={site.contact.phoneHref} class="inline-flex items-center justify-center px-8 py-3 rounded-full border border-border text-foreground text-sm font-medium hover:bg-muted transition-colors">
+                {site.contact.phone}
             </a>
         </div>
     </div>

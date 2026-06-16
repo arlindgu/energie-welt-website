@@ -2,14 +2,12 @@
 
 import tailwindcss from "@tailwindcss/vite"
 import { defineConfig, fontProviders } from "astro/config"
-import react from "@astrojs/react"
 
 // https://astro.build/config
 export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [react()],
   fonts: [
     {
       provider: fontProviders.local(),
@@ -30,7 +28,7 @@ export default defineConfig({
       options: {
         variants: [
           {
-            src: ["./src/assets/fonts/Archivo-Regular.woff2"],
+            src: ["./src/assets/fonts/Archivo-Variable.woff2"],
           },
         ],
       },

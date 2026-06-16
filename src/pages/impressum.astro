@@ -1,0 +1,52 @@
+---
+import Layout from "@/layouts/main.astro"
+import { site } from "@/config/site"
+---
+
+<Layout>
+  <section class="min-h-screen pt-32 pb-20 px-6">
+    <div class="max-w-3xl mx-auto">
+
+      <h1 class="font-heading text-4xl font-semibold mb-10">Impressum</h1>
+
+      <div class="flex flex-col gap-8 text-sm leading-relaxed text-foreground">
+
+        <div>
+          <h2 class="font-semibold text-base mb-2">Angaben gemäß § 5 TMG</h2>
+          <p>
+            {site.legal.company}<br />
+            {site.address.street}<br />
+            {site.address.city}<br />
+            {site.address.country}
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-semibold text-base mb-2">Kontakt</h2>
+          <p>
+            Telefon: {site.contact.phone}<br />
+            E-Mail: {site.contact.email}
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-semibold text-base mb-2">Umsatzsteuer-ID</h2>
+          <p>
+            Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
+            {site.legal.vatId}
+          </p>
+        </div>
+
+        <div>
+          <h2 class="font-semibold text-base mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+          <p>
+            {site.legal.responsible}<br />
+            {site.address.street}<br />
+            {site.address.city}
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</Layout>

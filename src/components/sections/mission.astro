@@ -1,0 +1,60 @@
+---
+import solarIcon from "@/assets/svgs/solar-icon.svg"
+import homeIcon from "@/assets/svgs/home-icon.svg"
+import computer from "@/assets/svgs/computer.svg"
+
+const services = [
+  {
+    title: "Erneuerbare Energieanlagen",
+    description:
+      "Planung, Entwicklung, Errichtung und Betrieb von Anlagen im Bereich erneuerbarer Energien – von der Konzeption bis zum Rückbau.",
+    icon: solarIcon,
+  },
+  {
+    title: "Smart Home & Gebäudetechnik",
+    description:
+      "Integrierte SmartHome-Lösungen und moderne Gebäudetechnik für energieeffizientes Wohnen und Arbeiten.",
+    icon: homeIcon,
+  },
+  {
+    title: "Digitale Lösungen & Plattformen",
+    description:
+      "Entwicklung und Betrieb von Software, digitalen Plattformen und Tools zur Steuerung und Optimierung von Energie- und Bauprojekten.",
+    icon: computer,
+  },
+]
+---
+
+<section id="services" class="w-full px-6 py-28 bg-brand">
+    <div class="flex flex-col xl:flex-row mx-auto max-w-6xl">
+      <div class="mb-16">
+        <p>Exzellent in allem, was wir tun.</p>
+        <h2
+          class="mb-4 font-heading text-4xl leading-tight font-semibold text-foreground md:text-5xl"
+        >
+          Innovationen im Bereich grüner Technologien und Umweltlösungen
+        </h2>
+        <button class="inline-flex h-9 items-center justify-center bg-secondary text-secondary-foreground px-4 text-sm font-medium transition-colors hover:bg-secondary/80">
+            Jetzt grüner werden
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-8">
+        {
+          services.map((service) => (
+            <div class="flex gap-4 justify-start items-center">
+              <img
+                src={service.icon.src}
+                alt={service.title}
+                class="w-16 fill-black object-contain"
+              />
+              <div>
+                <h3 class="text-xl font-bold text-foreground"> {service.title} </h3>
+                <p>{service.description}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+</section>
