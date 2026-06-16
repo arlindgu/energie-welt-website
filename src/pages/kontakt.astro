@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/main.astro"
 import { site } from "@/config/site"
+import Button from "@/components/Button.astro"
 ---
 
 <Layout>
@@ -64,9 +65,7 @@ import { site } from "@/config/site"
 
           <div id="form-feedback" class="hidden text-sm rounded-lg px-4 py-3"></div>
 
-          <button id="submit-btn" type="submit" class="inline-flex items-center justify-center px-6 py-3 bg-foreground text-background text-sm font-medium hover:bg-foreground/80 transition-colors rounded-lg disabled:opacity-50">
-            Nachricht senden
-          </button>
+          <Button id="submit-btn" type="submit"><span id="submit-text">Nachricht senden</span></Button>
         </form>
       </div>
 
@@ -77,12 +76,13 @@ import { site } from "@/config/site"
 <script>
   const form = document.getElementById("contact-form") as HTMLFormElement
   const btn = document.getElementById("submit-btn") as HTMLButtonElement
+  const btnText = document.getElementById("submit-text") as HTMLSpanElement
   const feedback = document.getElementById("form-feedback") as HTMLDivElement
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault()
     btn.disabled = true
-    btn.textContent = "Wird gesendet..."
+    btnText.textContent = "Wird gesendet..."
     feedback.className = "hidden text-sm rounded-lg px-4 py-3"
 
     const res = await fetch("/api/contact", {
@@ -102,6 +102,6 @@ import { site } from "@/config/site"
     }
 
     btn.disabled = false
-    btn.textContent = "Nachricht senden"
+    btnText.textContent = "Nachricht senden"
   })
 </script>

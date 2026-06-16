@@ -4,15 +4,13 @@ import { site } from "@/config/site"
 ---
 
 <Layout>
-  <section class="min-h-screen pt-32 pb-20 px-6">
-    <div class="max-w-3xl mx-auto">
-
-      <h1 class="font-heading text-4xl font-semibold mb-10">Impressum</h1>
+  <section class="px-6 py-32">
+    <div class="mx-auto max-w-6xl">
+      <h1 class="mb-10 font-heading text-4xl font-semibold">Impressum</h1>
 
       <div class="flex flex-col gap-8 text-sm leading-relaxed text-foreground">
-
         <div>
-          <h2 class="font-semibold text-base mb-2">Angaben gemäß § 5 TMG</h2>
+          <h2 class="mb-2 text-base font-semibold">Angaben gemäß § 5 TMG</h2>
           <p>
             {site.legal.company}<br />
             {site.address.street}<br />
@@ -22,7 +20,7 @@ import { site } from "@/config/site"
         </div>
 
         <div>
-          <h2 class="font-semibold text-base mb-2">Kontakt</h2>
+          <h2 class="mb-2 text-base font-semibold">Kontakt</h2>
           <p>
             Telefon: {site.contact.phone}<br />
             E-Mail: {site.contact.email}
@@ -30,22 +28,24 @@ import { site } from "@/config/site"
         </div>
 
         <div>
-          <h2 class="font-semibold text-base mb-2">Umsatzsteuer-ID</h2>
+          <h2 class="mb-2 text-base font-semibold">Umsatzsteuer-ID</h2>
           <p>
-            Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br />
+            Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:<br
+            />
             {site.legal.vatId}
           </p>
         </div>
 
         <div>
-          <h2 class="font-semibold text-base mb-2">Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+          <h2 class="mb-2 text-base font-semibold">
+            Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
+          </h2>
           <p>
             {site.legal.responsible}<br />
             {site.address.street}<br />
             {site.address.city}
           </p>
         </div>
-
       </div>
     </div>
   </section>

@@ -1,36 +1,39 @@
 ---
 import heroVideo from "@/assets/videos/hero.mp4"
+import Button from "@/components/Button.astro"
 ---
 
-<section class="relative w-full h-screen overflow-hidden">
+<section
+  class="relative h-[calc(100vh-4rem)] flex w-full flex-col overflow-hidden"
+>
+  <video
+    class="absolute inset-0 h-full w-full object-cover"
+    src={heroVideo}
+    autoplay
+    muted
+    playsinline></video>
 
-    <video
-        class="absolute inset-0 w-full h-full object-cover"
-        src={heroVideo}
-        autoplay
-        muted
-        playsinline
-    ></video>
+  <div class="absolute inset-0 bg-black/50"></div>
 
-    <div class="absolute inset-0 bg-black/50"></div>
-
-    <div class="relative z-10 h-full flex items-end justify-between px-8 lg:px-16 pb-16 lg:pb-20">
-        <div class="max-w-2xl lg:max-w-xl">
-            <h1 class="font-heading text-4xl sm:text-5xl xl:text-6xl font-semibold leading-tight text-white mb-4">
-                Wir brauchen die Veränderung.<br />
-                <span class="text-green-500">Wir machen sie.</span>
-            </h1>
-            <p class="text-white/70 text-base leading-relaxed max-w-sm">
-                Nachhaltige Energielösungen für Privat- und Gewerbekunden –
-                effizient, zuverlässig und zukunftssicher.
-            </p>
+  <div class="relative z-10 h-full px-6">
+    <div
+      class="mx-auto flex h-full max-w-6xl flex-col justify-end pb-12 lg:pb-16"
+    >
+      <div class="flex items-end justify-between gap-8">
+        <div>
+          <h1 class="heading-display text-white animate-fade-up">
+            Wir brauchen die Veränderung.<br />
+            <span class="text-brand">Wir machen sie.</span>
+          </h1>
+          <p class="mt-4 max-w-sm text-base leading-relaxed text-white/70">
+            Nachhaltige Energielösungen für Privat- und Gewerbekunden –
+            effizient, zuverlässig und zukunftssicher.
+          </p>
         </div>
-
-        <div class="flex-shrink-0 ml-8">
-            <button class="inline-flex h-11 items-center justify-center bg-secondary text-secondary-foreground px-4 text-sm font-medium transition-colors hover:bg-secondary/80">
-                Offerte einholen
-            </button>
+        <div class="shrink-0">
+          <Button variant="primary" href="/offerte">Offerte einholen</Button>
         </div>
+      </div>
     </div>
-
+  </div>
 </section>

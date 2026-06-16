@@ -1,5 +1,6 @@
 ---
 import { site } from "@/config/site"
+import Button from "@/components/Button.astro"
 ---
 
 <section class="w-full bg-background py-28 px-6">
@@ -12,12 +13,8 @@ import { site } from "@/config/site"
             und erfahren Sie, wie EnergieWelt Ihnen helfen kann.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={`mailto:${site.contact.email}`} class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
-                Jetzt Kontakt aufnehmen
-            </a>
-            <a href={site.contact.phoneHref} class="inline-flex items-center justify-center px-8 py-3 rounded-full border border-border text-foreground text-sm font-medium hover:bg-muted transition-colors">
-                {site.contact.phone}
-            </a>
+            <Button href={`mailto:${site.contact.email}`}>Jetzt Kontakt aufnehmen</Button>
+            <Button href={site.contact.phoneHref}>{site.contact.phone}</Button>
         </div>
     </div>
 </section>

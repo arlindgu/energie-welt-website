@@ -21,7 +21,7 @@ export const POST: APIRoute = async ({ request }) => {
   const resend = new Resend(import.meta.env.RESEND_API_KEY)
 
   const { error } = await resend.emails.send({
-    from: `${site.name} <onboarding@resend.dev>`,
+    from: `${site.name} <info@energie-welt.ch>`,
     to: site.contact.email,
     replyTo: email,
     subject: `Kontaktanfrage: ${betreff}`,
@@ -35,7 +35,8 @@ export const POST: APIRoute = async ({ request }) => {
   })
 
   if (error) {
-    return new Response(JSON.stringify({ error: "E-Mail konnte nicht gesendet werden." }), {
+    console.error("[contact] Resend error:", error)
+    return new Response(JSON.stringify({ error: "E-Mail konnte nicht gesendet werden.", detail: error.message }), {
       status: 500,
       headers: { "Content-Type": "application/json" },
     })

@@ -24,14 +24,13 @@ const content = [
 
 <section class="py-16 px-6">
   <div class="max-w-6xl mx-auto">
-    <div class="flex flex-col items-center gap-4">
-      <h2 class="text-center font-bold uppercase">Unsere Dienstleistungen</h2>
-      <p class="text-center font-heading text-4xl uppercase">
+    <div class="flex flex-row justify-between items-start gap-4">
+      <h2>
         Massgeschneiderte Lösungen.
         <br />
         Für eine nachhaltige Zukunft.
-      </p>
-      <p class="max-w-2xl text-center">
+      </h2>
+      <p class="max-w-sm">
         Von der Planung bis zum Betrieb bieten wir umfassende Dienstleistungen
         in den Bereichen erneuerbare Energieanlagen, Smart Home & Gebäudetechnik
         sowie digitale Lösungen & Plattformen.
@@ -47,9 +46,9 @@ const content = [
             <div class="absolute right-0 bottom-0 left-0 flex items-end justify-between p-6">
               <div class="flex flex-col gap-3">
                 <div class="w-12 h-12 text-brand" set:html={item.icon} />
-                <h3 class="font-heading text-xl font-semibold text-white">
+                <p class="font-heading text-xl font-semibold text-white">
                   {item.title}
-                </h3>
+                </p>
               </div>
             </div>
           </div>
