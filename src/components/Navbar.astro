@@ -1,6 +1,5 @@
 ---
 import { site } from "@/config/site"
-import Button from "@/components/Button.astro"
 import Logo from "/logo_light.svg?raw"
 ---
 
@@ -30,7 +29,7 @@ import Logo from "/logo_light.svg?raw"
 
     <div class="flex items-center gap-4">
       <div class="hidden md:inline-flex">
-        <Button variant="primary" href="/offerte">Offerte einholen</Button>
+        <a href="/offerte" class="btn-primary">Offerte einholen</a>
       </div>
 
       <button
@@ -64,7 +63,7 @@ import Logo from "/logo_light.svg?raw"
       class="text-muted-foreground py-2 text-sm transition-colors hover:text-foreground"
       >Kontakt</a
     >
-    <Button variant="primary" href="/offerte"> Offerte einholen </Button>
+    <a href="/offerte" class="btn-primary">Offerte einholen</a>
   </div>
 </header>
 

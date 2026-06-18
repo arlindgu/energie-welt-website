@@ -1,10 +1,9 @@
 ---
 import heroVideo from "@/assets/videos/hero.mp4"
-import Button from "@/components/Button.astro"
 ---
 
 <section
-  class="relative h-[calc(100vh-4rem)] flex w-full flex-col overflow-hidden"
+  class="relative flex h-[calc(100vh-4rem)] w-full flex-col overflow-hidden"
 >
   <video
     class="absolute inset-0 h-full w-full object-cover"
@@ -21,17 +20,15 @@ import Button from "@/components/Button.astro"
     >
       <div class="flex items-end justify-between gap-8">
         <div>
-          <h1 class="heading-display text-white animate-fade-up">
+          <h1 class="display text-white">
             Wir brauchen die Veränderung.<br />
-            <span class="text-brand">Wir machen sie.</span>
+            <span class="text-brand-300">Wir machen sie.</span>
           </h1>
-          <p class="mt-4 max-w-sm text-base leading-relaxed text-white/70">
+          <p class="mb-4 max-w-sm text-base leading-relaxed text-white/70">
             Nachhaltige Energielösungen für Privat- und Gewerbekunden –
             effizient, zuverlässig und zukunftssicher.
           </p>
-        </div>
-        <div class="shrink-0">
-          <Button variant="primary" href="/offerte">Offerte einholen</Button>
+          <a href="/offerte" class="btn-primary">Offerte einholen</a>
         </div>
       </div>
     </div>

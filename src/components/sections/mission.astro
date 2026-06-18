@@ -1,5 +1,4 @@
 ---
-import Button from "@/components/Button.astro"
 import { Icon } from "astro-icon/components"
 
 const pillars = [
@@ -26,14 +25,13 @@ const pillars = [
 
 <section id="services" class="w-full bg-foreground text-background px-6 py-28">
   <div class="mx-auto flex max-w-6xl flex-col gap-16 xl:flex-row xl:gap-24">
-    <div class="mb-16 flex flex-col xl:mb-0">
+    <div class="mb-16 flex flex-col xl:mb-0 justify-between">
       <h2
-        class="font-heading mb-auto text-7xl leading-tight font-semibold text-background md:text-5xl"
       >
         Qualität und Verlässlichkeit als Grundlage jedes Projekts
       </h2>
       <div>
-        <Button href="/kontakt" variant="light"> Jetzt grüner werden </Button>
+        <a href="/offerte" class="btn-primary"> Jetzt grüner werden </a>
       </div>
     </div>
 

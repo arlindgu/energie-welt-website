@@ -1,7 +1,6 @@
 ---
 import Layout from "@/layouts/main.astro"
 import { site } from "@/config/site"
-import Button from "@/components/Button.astro"
 ---
 
 <Layout>
@@ -65,7 +64,7 @@ import Button from "@/components/Button.astro"
 
           <div id="form-feedback" class="hidden text-sm rounded-lg px-4 py-3"></div>
 
-          <Button id="submit-btn" variant="primary" type="submit"><span id="submit-text">Nachricht senden</span></Button>
+          <button id="submit-btn" class="btn-primary" type="submit"><span id="submit-text">Nachricht senden</span></button>
         </form>
       </div>
 

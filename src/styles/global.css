@@ -1,136 +1,84 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand: oklch(0.9091 0.2032 119.99);
+  --color-brand-50:  oklch(0.97 0.05 119.99);
+--color-brand-100: oklch(0.95 0.10 119.99);
+--color-brand-200: oklch(0.92 0.145 119.99);
+--color-brand-300: oklch(0.9091 0.2032 119.99); /* dein brand */
+--color-brand-400: oklch(0.85 0.2032 119.99);
+--color-brand-500: oklch(0.7791 0.1832 119.99); /* dein brand-foreground */
+--color-brand-600: oklch(0.68 0.17 119.99);
+--color-brand-700: oklch(0.55 0.14 119.99);
+--color-brand-800: oklch(0.42 0.11 119.99);
+--color-brand-900: oklch(0.30 0.08 119.99);
   --color-brand-foreground: oklch(0.7791 0.1832 119.99);
   --color-foreground: oklch(0.2134 0 0);
   --color-background: oklch(1 0 0);
+  --font-body: var(--font-archivo);
+  --font-heading: var(--font-clash-display);
+  --radius: 4rem;
 }
 
-
-:root {
-  --color-brand: oklch(0.9091 0.2032 119.99);
-  --color-foreground: oklch(0.2134 0 0);
-  --color-background: oklch(1 0 0);
-  --font-heading: var(--font-clash-display), sans-serif;
-  --font-body: var(--font-archivo), sans-serif;
-
-
-  /* below the base */
-  --font-size-2b: 0.625rem;
-  --font-size-1b: 0.8125rem;
-
-  /* the base */
-  --font-size: 1rem;
-
-  /* above the base */
-  --font-size-1: 1.25rem;
-  --font-size-2: 1.5625rem;
-  --font-size-3: 2rem;
-  --font-size-4: 2.5rem;
-  --font-size-5: 3.1875rem;
-  --font-size-6: 4rem;
-  --font-size-7: 5.0625rem;
-  --font-size-8: 6.375rem;
-}
-
-/* --- Line Heights --- */
-
-:root {
-  /* below the base */
-  --line-height-2b: 2;
-  --line-height-1b: 1.5385;
-
-  /* the base */
-  --line-height: 1.5;
-
-  /* above the base */
-  --line-height-1: 1.4;
-  --line-height-2: 1.28;
-  --line-height-3: 1.25;
-  --line-height-4: 1.2;
-  --line-height-5: 1.1765;
-  --line-height-6: 1.125;
-  --line-height-7: 1.0864;
-}
-
-/* --- Letter Spacings --- */
-
-:root {
-  /* below the base */
-  --letter-space-2b: 0.074em;
-  --letter-space-1b: 0.05em;
-
-  /* the base */
-  --letter-space: 0.035em;
-
-  /* above the base */
-  --letter-space-1: 0.022em;
-  --letter-space-2: 0.0116em;
-  --letter-space-3: 0.0025em;
-  --letter-space-4: -0.004em;
-  --letter-space-5: -0.0096em;
-  --letter-space-6: -0.0137em;
-  --letter-space-7: -0.0172em;
-}
-
-/* ------------------------------
- | Examples
- */
-
-/* --- Default Text --- */
-
-body {
-  font-weight: 400;
-  font-size: var(--font-size);
-  line-height: var(--line-height);
-  letter-spacing: var(--letter-space);
-  font-family: var(--font-body);
-  background-color: var(--color-background);
-  color: var(--color-foreground);
-}
-
-/* --- Headers --- */
-
-:is(h1, h2, h3) {
-  font-weight: 600;
-}
-
-h1 {
-  font-size: var(--font-size-6);
-  line-height: var(--line-height-3);
-  letter-spacing: var(--letter-space-3);
-  font-family: var(--font-heading);
-}
-h2 {
-  font-size: var(--font-size-5);
-  line-height: var(--line-height-2);
-  letter-spacing: var(--letter-space-2);
-}
-h3 {
-  font-size: var(--font-size-4);
-  line-height: var(--line-height-1);
-  letter-spacing: var(--letter-space-1);
-}
-
-.heading-display {
-  font-size: var(--font-size-7);
-  line-height: var(--line-height-4);
-  letter-spacing: var(--letter-space-4);
-  font-family: var(--font-heading);
-}
-
-/* --- Alternative Text Sizes --- */
-
-:is(p, span, a, ul, ol, dl, li, dt, dd, label, blockquote, code) {
-  &.small-text {
-    font-size: var(--font-size-1b);
-    line-height: var(--line-height-1b);
-    letter-spacing: var(--letter-space-1b);
+@layer components {
+  .btn-primary {
+    cursor: pointer;
+    background-color: var(--color-brand-300);
+    padding: 0.5rem 1rem;
+    color: var(--color-foreground);
+    border-radius: var(--radius);
   }
-  &.large-text {
-    font-size: var(--font-size-1);
-    line-height: var(--line-height-1);
-    letter-spacing: var(--letter-space-1);
+
+  .btn-primary:hover {
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+    background-color: var(--color-brand-400);
+  }
+}
+
+@layer base {
+  body {
+    font-weight: 400;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-space);
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-heading);
+  }
+
+  h1.display {
+    font-size: clamp(2.986rem, 5vw, 3.5832rem);
+    font-weight: 900;
+  }
+
+  h1 {
+    font-size: 2.986rem;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-size: 2.488rem;
+    font-weight: 700;
+  }
+
+  h3 {
+    font-size: 2.074rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  small {
+    font-size: 0.833rem;
   }
 }
