@@ -3,8 +3,8 @@ import { site } from "@/config/site"
 ---
 
 <section class="w-full bg-background py-28 px-6">
-    <div class="max-w-4xl mx-auto text-center">
-        <h2 class="font-heading text-4xl md:text-6xl font-semibold leading-tight mb-6">
+    <div class="max-w-4xl mx-auto text-center flex flex-col items-center">
+        <h2>
             Bereit für saubere<br />Energie?
         </h2>
         <p class="text-muted-foreground text-lg max-w-xl mx-auto leading-relaxed mb-12">
@@ -12,12 +12,7 @@ import { site } from "@/config/site"
             und erfahren Sie, wie EnergieWelt Ihnen helfen kann.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={`mailto:${site.contact.email}`} class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors">
-                Jetzt Kontakt aufnehmen
-            </a>
-            <a href={site.contact.phoneHref} class="inline-flex items-center justify-center px-8 py-3 rounded-full border border-border text-foreground text-sm font-medium hover:bg-muted transition-colors">
-                {site.contact.phone}
-            </a>
+            <a href="/kontakt" class="btn-primary">Kontakt aufnehmen</a>
         </div>
     </div>
 </section>

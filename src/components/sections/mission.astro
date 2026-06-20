@@ -1,60 +1,58 @@
 ---
-import solarIcon from "@/assets/svgs/solar-icon.svg"
-import homeIcon from "@/assets/svgs/home-icon.svg"
-import computer from "@/assets/svgs/computer.svg"
+import { Icon } from "astro-icon/components"
 
-const services = [
+const pillars = [
   {
-    title: "Erneuerbare Energieanlagen",
+    title: "Zertifizierte Experten",
     description:
-      "Planung, Entwicklung, Errichtung und Betrieb von Anlagen im Bereich erneuerbarer Energien – von der Konzeption bis zum Rückbau.",
-    icon: solarIcon,
+      "Unser Team besteht aus geprüften Fachkräften mit langjähriger Erfahrung in erneuerbaren Energien und Gebäudetechnik.",
+    icon: "lucide:user-check",
   },
   {
-    title: "Smart Home & Gebäudetechnik",
+    title: "5 Jahre Garantie",
     description:
-      "Integrierte SmartHome-Lösungen und moderne Gebäudetechnik für energieeffizientes Wohnen und Arbeiten.",
-    icon: homeIcon,
+      "Auf alle unsere Installationen gewähren wir eine umfassende 5-Jahres-Garantie – für Ihre Sicherheit und unser Qualitätsversprechen.",
+    icon: "lucide:shield-check",
   },
   {
-    title: "Digitale Lösungen & Plattformen",
+    title: "Nachhaltig & zukunftssicher",
     description:
-      "Entwicklung und Betrieb von Software, digitalen Plattformen und Tools zur Steuerung und Optimierung von Energie- und Bauprojekten.",
-    icon: computer,
+      "Wir planen nicht für heute, sondern für die nächsten Jahrzehnte – mit skalierbaren Lösungen die mit Ihren Anforderungen wachsen.",
+    icon: "lucide:leaf",
   },
 ]
 ---
 
-<section id="services" class="w-full px-6 py-28 bg-brand">
-    <div class="flex flex-col xl:flex-row mx-auto max-w-6xl">
-      <div class="mb-16">
-        <p>Exzellent in allem, was wir tun.</p>
-        <h2
-          class="mb-4 font-heading text-4xl leading-tight font-semibold text-foreground md:text-5xl"
-        >
-          Innovationen im Bereich grüner Technologien und Umweltlösungen
-        </h2>
-        <button class="inline-flex h-9 items-center justify-center bg-secondary text-secondary-foreground px-4 text-sm font-medium transition-colors hover:bg-secondary/80">
-            Jetzt grüner werden
-        </button>
-      </div>
-
-      <div class="flex flex-col gap-8">
-        {
-          services.map((service) => (
-            <div class="flex gap-4 justify-start items-center">
-              <img
-                src={service.icon.src}
-                alt={service.title}
-                class="w-16 fill-black object-contain"
-              />
-              <div>
-                <h3 class="text-xl font-bold text-foreground"> {service.title} </h3>
-                <p>{service.description}</p>
-              </div>
-            </div>
-          ))
-        }
+<section id="services" class="w-full bg-foreground text-background px-6 py-28">
+  <div class="mx-auto flex max-w-6xl flex-col gap-16 xl:flex-row xl:gap-24">
+    <div class="mb-16 flex flex-col xl:mb-0 justify-between">
+      <h2
+      >
+        Qualität und Verlässlichkeit als Grundlage jedes Projekts
+      </h2>
+      <div>
+        <a href="/offerte" class="btn-primary"> Jetzt grüner werden </a>
       </div>
     </div>
+
+    <div class="flex flex-col gap-10">
+      {
+        pillars.map((item) => (
+          <div class="flex items-start gap-5">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-background/10">
+              <Icon name={item.icon} class="h-6 w-6 text-background" />
+            </div>
+            <div>
+              <p class="mb-1 text-lg font-bold text-background">
+                {item.title}
+              </p>
+              <p class="text-sm leading-relaxed text-background/70">
+                {item.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
 </section>

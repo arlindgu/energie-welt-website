@@ -1,41 +1,85 @@
 ---
 import { site } from "@/config/site"
+import Logo from "/logo_light.svg?raw"
 ---
 
-<footer class="bg-foreground text-background overflow-hidden px-6">
-
-  <div class="max-w-6xl mx-auto pt-20 pb-8">
-
-    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
-
+<footer class="overflow-hidden bg-foreground px-6 text-background">
+  <div class="mx-auto max-w-6xl pt-20 pb-8">
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-3">
       <div class="bg-foreground">
-        <img src="/logo_dark.svg" alt={site.name} class="h-6 w-auto mb-6" />
-        <p class="text-background/50 text-sm leading-relaxed">
+        <a href="/" class="h-6 w-auto inline-flex items-start">
+          <Fragment set:html={Logo} />
+        </a>
+        <p class="text-sm leading-relaxed text-background/50">
           {site.description}
         </p>
       </div>
 
       <div class="bg-foreground">
-        <p class="text-xs font-semibold uppercase tracking-widest text-brand mb-6">Navigation</p>
+        <p
+          class="mb-6 text-xs font-semibold tracking-widest text-brand uppercase"
+        >
+          Navigation
+        </p>
         <ul class="flex flex-col gap-3">
-          <li><a href="/#about" class="text-sm text-background/60 hover:text-background transition-colors">Über uns</a></li>
-          <li><a href="/#services" class="text-sm text-background/60 hover:text-background transition-colors">Leistungen</a></li>
-          <li><a href="/kontakt" class="text-sm text-background/60 hover:text-background transition-colors">Kontakt</a></li>
-          <li><a href="/impressum" class="text-sm text-background/60 hover:text-background transition-colors">Impressum</a></li>
-          <li><a href="/datenschutz" class="text-sm text-background/60 hover:text-background transition-colors">Datenschutz</a></li>
+          <li>
+            <a
+              href="/#about"
+              class="text-sm text-background/60 transition-colors hover:text-background"
+              >Über uns</a
+            >
+          </li>
+          <li>
+            <a
+              href="/#services"
+              class="text-sm text-background/60 transition-colors hover:text-background"
+              >Leistungen</a
+            >
+          </li>
+          <li>
+            <a
+              href="/kontakt"
+              class="text-sm text-background/60 transition-colors hover:text-background"
+              >Kontakt</a
+            >
+          </li>
+          <li>
+            <a
+              href="/impressum"
+              class="text-sm text-background/60 transition-colors hover:text-background"
+              >Impressum</a
+            >
+          </li>
+          <li>
+            <a
+              href="/datenschutz"
+              class="text-sm text-background/60 transition-colors hover:text-background"
+              >Datenschutz</a
+            >
+          </li>
         </ul>
       </div>
 
       <div class="bg-foreground">
-        <p class="text-xs font-semibold uppercase tracking-widest text-brand mb-6">Kontakt</p>
+        <p
+          class="mb-6 text-xs font-semibold tracking-widest text-brand uppercase"
+        >
+          Kontakt
+        </p>
         <ul class="flex flex-col gap-3">
           <li>
-            <a href={`mailto:${site.contact.email}`} class="text-sm text-background/60 hover:text-background transition-colors break-all">
+            <a
+              href={`mailto:${site.contact.email}`}
+              class="text-sm break-all text-background/60 transition-colors hover:text-background"
+            >
               {site.contact.email}
             </a>
           </li>
           <li>
-            <a href={site.contact.phoneHref} class="text-sm text-background/60 hover:text-background transition-colors">
+            <a
+              href={site.contact.phoneHref}
+              class="text-sm text-background/60 transition-colors hover:text-background"
+            >
               {site.contact.phone}
             </a>
           </li>
@@ -46,13 +90,15 @@ import { site } from "@/config/site"
           </li>
         </ul>
       </div>
-
     </div>
 
-    <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-8 mt-px">
-      <p class="text-xs text-background/30">© {new Date().getFullYear()} {site.legal.company}. Alle Rechte vorbehalten.</p>
+    <div
+      class="mt-px flex flex-col items-center justify-between gap-4 pt-8 sm:flex-row"
+    >
+      <p class="text-xs text-background/30">
+        © {new Date().getFullYear()}
+        {site.legal.company}. Alle Rechte vorbehalten.
+      </p>
     </div>
-
   </div>
-
 </footer>

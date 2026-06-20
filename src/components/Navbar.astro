@@ -1,45 +1,70 @@
 ---
 import { site } from "@/config/site"
+import Logo from "/logo_light.svg?raw"
 ---
 
-<header class="fixed top-0 right-0 left-0 z-50 bg-background border-b border-border px-6">
-
+<header class="sticky top-0 z-50 bg-background px-6">
   <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between">
-
     <a href="/">
-      <img src="/logo_light.svg" alt={site.name} class="block h-7 w-auto dark:hidden" />
-      <img src="/logo_dark.svg" alt={site.name} class="hidden h-7 w-auto dark:block" />
+      <Fragment set:html={Logo} class="block h-7 w-auto" />
     </a>
 
-    <div class="hidden md:flex items-center gap-8">
-      <a href="/#about" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Über uns</a>
-      <a href="/#services" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Leistungen</a>
-      <a href="/kontakt" class="text-sm text-muted-foreground transition-colors hover:text-foreground">Kontakt</a>
+    <div class="hidden items-center gap-8 md:flex">
+      <a
+        href="/#about"
+        class="text-muted-foreground text-sm transition-colors hover:text-foreground"
+        >Über uns</a
+      >
+      <a
+        href="/#services"
+        class="text-muted-foreground text-sm transition-colors hover:text-foreground"
+        >Leistungen</a
+      >
+      <a
+        href="/kontakt"
+        class="text-muted-foreground text-sm transition-colors hover:text-foreground"
+        >Kontakt</a
+      >
     </div>
 
     <div class="flex items-center gap-4">
-      <a href="/kontakt" class="hidden md:inline-flex items-center justify-center px-4 py-2 bg-foreground text-background text-sm font-medium hover:bg-foreground/80 transition-colors rounded-lg">
-        Kontakt aufnehmen
-      </a>
+      <div class="hidden md:inline-flex">
+        <a href="/offerte" class="btn-primary">Offerte einholen</a>
+      </div>
 
-      <button id="menu-toggle" class="md:hidden flex flex-col gap-1.5 p-1" aria-label="Menü öffnen">
-        <span class="block w-6 h-0.5 bg-foreground transition-all"></span>
-        <span class="block w-6 h-0.5 bg-foreground transition-all"></span>
-        <span class="block w-6 h-0.5 bg-foreground transition-all"></span>
+      <button
+        id="menu-toggle"
+        class="flex flex-col gap-1.5 p-1 md:hidden"
+        aria-label="Menü öffnen"
+      >
+        <span class="block h-0.5 w-6 bg-foreground transition-all"></span>
+        <span class="block h-0.5 w-6 bg-foreground transition-all"></span>
+        <span class="block h-0.5 w-6 bg-foreground transition-all"></span>
       </button>
     </div>
-
   </nav>
 
-  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-background py-4 flex flex-col gap-4">
-    <a href="/#about" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">Über uns</a>
-    <a href="/#services" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">Leistungen</a>
-    <a href="/kontakt" class="text-sm text-muted-foreground hover:text-foreground transition-colors py-2">Kontakt</a>
-    <a href="/kontakt" class="inline-flex items-center justify-center px-4 py-2 bg-foreground text-background text-sm font-medium hover:bg-foreground/80 transition-colors rounded-lg">
-      Kontakt aufnehmen
-    </a>
+  <div
+    id="mobile-menu"
+    class="border-border flex hidden flex-col gap-4 border-t bg-background py-4 md:hidden"
+  >
+    <a
+      href="/#about"
+      class="text-muted-foreground py-2 text-sm transition-colors hover:text-foreground"
+      >Über uns</a
+    >
+    <a
+      href="/#services"
+      class="text-muted-foreground py-2 text-sm transition-colors hover:text-foreground"
+      >Leistungen</a
+    >
+    <a
+      href="/kontakt"
+      class="text-muted-foreground py-2 text-sm transition-colors hover:text-foreground"
+      >Kontakt</a
+    >
+    <a href="/offerte" class="btn-primary">Offerte einholen</a>
   </div>
-
 </header>
 
 <script>
