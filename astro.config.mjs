@@ -21,7 +21,7 @@ export default defineConfig({
       options: {
         variants: [
           {
-            src: ["./src/assets/fonts/ClashDisplay-Bold.woff2"],
+            src: ["./src/assets/fonts/ClashDisplay-Variable.woff2"],
           },
         ],
       },
