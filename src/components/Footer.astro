@@ -7,7 +7,7 @@ import Logo from "/logo_light.svg?raw"
   <div class="mx-auto max-w-6xl pt-20 pb-8">
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-3">
       <div class="bg-foreground">
-        <a href="/" class="h-6 w-auto inline-flex items-start">
+        <a href="/" class="inline-flex h-6 w-auto items-start">
           <Fragment set:html={Logo} />
         </a>
         <p class="text-sm leading-relaxed text-background/50">
@@ -17,7 +17,7 @@ import Logo from "/logo_light.svg?raw"
 
       <div class="bg-foreground">
         <p
-          class="mb-6 text-xs font-semibold tracking-widest text-brand uppercase"
+          class="text-brand mb-6 text-xs font-semibold tracking-widest uppercase"
         >
           Navigation
         </p>
@@ -62,11 +62,16 @@ import Logo from "/logo_light.svg?raw"
 
       <div class="bg-foreground">
         <p
-          class="mb-6 text-xs font-semibold tracking-widest text-brand uppercase"
+          class="text-brand mb-6 text-xs font-semibold tracking-widest uppercase"
         >
           Kontakt
         </p>
         <ul class="flex flex-col gap-3">
+          <li
+            class="text-sm text-background/60"
+          >
+            {site.legal.responsible}
+          </li>
           <li>
             <a
               href={`mailto:${site.contact.email}`}
@@ -83,6 +88,7 @@ import Logo from "/logo_light.svg?raw"
               {site.contact.phone}
             </a>
           </li>
+
           <li class="text-sm text-background/60">
             {site.address.street}<br />
             {site.address.city}<br />
