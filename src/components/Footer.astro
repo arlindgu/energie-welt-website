@@ -67,11 +67,6 @@ import Logo from "/logo_light.svg?raw"
           Kontakt
         </p>
         <ul class="flex flex-col gap-3">
-          <li
-            class="text-sm text-background/60"
-          >
-            {site.legal.responsible}
-          </li>
           <li>
             <a
               href={`mailto:${site.contact.email}`}
@@ -87,6 +82,9 @@ import Logo from "/logo_light.svg?raw"
             >
               {site.contact.phone}
             </a>
+          </li>
+          <li class="text-sm text-background/60">
+            {site.legal.responsible}
           </li>
 
           <li class="text-sm text-background/60">
