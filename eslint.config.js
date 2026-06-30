@@ -19,5 +19,11 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      // shadcn/ui components re-export their cva variants (e.g. buttonVariants)
+      // alongside the component. Allow that and keep react-refresh advisory
+      // rather than a hard error so it doesn't block lint/CI.
+      "react-refresh/only-export-components": ["warn", { allowConstantExport: true }],
+    },
   },
 ])
