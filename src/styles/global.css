@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-50:  oklch(0.97 0.05 119.99);
---color-brand-100: oklch(0.95 0.10 119.99);
---color-brand-200: oklch(0.92 0.145 119.99);
---color-brand-300: oklch(0.9091 0.2032 119.99); /* dein brand */
---color-brand-400: oklch(0.85 0.2032 119.99);
---color-brand-500: oklch(0.7791 0.1832 119.99); /* dein brand-foreground */
---color-brand-600: oklch(0.68 0.17 119.99);
---color-brand-700: oklch(0.55 0.14 119.99);
---color-brand-800: oklch(0.42 0.11 119.99);
---color-brand-900: oklch(0.30 0.08 119.99);
+  --color-brand-25: oklch(0.95 0.085 148.02);
+  --color-brand-50: oklch(0.904 0.178 148.02);
+  --color-brand-100: oklch(0.857 0.248 148.02);
+  --color-brand-200: oklch(0.811 0.235 148.02);
+  --color-brand-300: oklch(0.764 0.221 148.02);
+  --color-brand-400: oklch(0.718 0.208 148.02);
+  --color-brand-500: oklch(0.672 0.194 148.02);
+  --color-brand-600: oklch(0.625 0.181 148.02);
+  --color-brand-700: oklch(0.579 0.167 148.02);
+  --color-brand-800: oklch(0.533 0.154 148.02);
+  --color-brand-900: oklch(0.486 0.141 148.02);
+  --color-brand-950: oklch(0.44 0.127 148.02);
+  --color-brand-975: oklch(0.393 0.114 148.02);
   --color-brand-foreground: oklch(0.7791 0.1832 119.99);
   --color-foreground: oklch(0.2134 0 0);
   --color-background: oklch(1 0 0);
