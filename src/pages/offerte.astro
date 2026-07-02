@@ -8,12 +8,12 @@ import { Icon } from "astro-icon/components"
     <div class="bg-brand px-6 py-32">
       <div class="mx-auto max-w-6xl">
         <p
-          class="mb-3 text-sm font-semibold tracking-wider text-foreground/60 uppercase"
+          class="text-sm font-semibold tracking-wider text-background/95 uppercase"
         >
           Kostenlos und unverbindlich
         </p>
         <h1
-          class="font-heading text-5xl leading-tight font-semibold text-foreground md:text-6xl"
+          class="font-heading text-5xl leading-tight font-semibold text-background md:text-6xl"
         >
           Offerte einholen
         </h1>
@@ -43,7 +43,7 @@ import { Icon } from "astro-icon/components"
                     type="text"
                     placeholder="Max Mustermann"
                     required
-                    class="border-border focus:ring-brand/40 rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field"
                   />
                 </div>
                 <div class="flex flex-col gap-1.5">
@@ -53,7 +53,7 @@ import { Icon } from "astro-icon/components"
                     type="email"
                     placeholder="max@beispiel.ch"
                     required
-                    class="border-border focus:ring-brand/40 rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field"
                   />
                 </div>
                 <div class="flex flex-col gap-1.5 sm:col-span-2">
@@ -62,7 +62,7 @@ import { Icon } from "astro-icon/components"
                     name="telefon"
                     type="tel"
                     placeholder="+41 00 000 00 00"
-                    class="border-border focus:ring-brand/40 rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field"
                   />
                 </div>
               </div>
@@ -87,7 +87,7 @@ import { Icon } from "astro-icon/components"
                     placeholder="Musterstrasse 1"
                     autocomplete="off"
                     required
-                    class="border-border focus:ring-brand/40 rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field"
                   />
                   <div
                     id="strasse-suggestions"
@@ -103,7 +103,7 @@ import { Icon } from "astro-icon/components"
                     type="text"
                     placeholder="8000"
                     required
-                    class="border-border focus:ring-brand/40 rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field"
                   />
                 </div>
                 <div class="flex flex-col gap-1.5 sm:col-span-2">
@@ -114,7 +114,7 @@ import { Icon } from "astro-icon/components"
                     type="text"
                     placeholder="Zürich"
                     required
-                    class="border-border focus:ring-brand/40 rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field"
                   />
                 </div>
                 <div class="flex flex-col gap-1.5 sm:col-span-2">
@@ -123,7 +123,7 @@ import { Icon } from "astro-icon/components"
                     id="objektzustand"
                     name="objektzustand"
                     required
-                    class="border-border focus:ring-brand/40 cursor-pointer rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field cursor-pointer"
                   >
                     <option value="" disabled selected>Bitte wählen...</option>
                     <option value="Neubau">Neubau</option>
@@ -137,7 +137,7 @@ import { Icon } from "astro-icon/components"
                   <select
                     name="gebaeude_typ"
                     required
-                    class="border-border focus:ring-brand/40 cursor-pointer rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field cursor-pointer"
                   >
                     <option value="" disabled selected>Bitte wählen...</option>
                     <option value="Einfamilienhaus">Einfamilienhaus</option>
@@ -156,7 +156,7 @@ import { Icon } from "astro-icon/components"
                     name="objektzustand_anderes"
                     type="text"
                     placeholder="Bitte beschreiben..."
-                    class="border-border focus:ring-brand/40 rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field"
                   />
                 </div>
               </div>
@@ -176,7 +176,7 @@ import { Icon } from "astro-icon/components"
                     id="dachtyp"
                     name="dachtyp"
                     required
-                    class="border-border focus:ring-brand/40 cursor-pointer rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field cursor-pointer"
                   >
                     <option value="" disabled selected>Bitte wählen...</option>
                     <option value="Flachdach">Flachdach</option>
@@ -195,7 +195,7 @@ import { Icon } from "astro-icon/components"
                     name="dachtyp_anderes"
                     type="text"
                     placeholder="z.B. Carport, Fassade, ..."
-                    class="border-border focus:ring-brand/40 rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field"
                   />
                 </div>
 
@@ -212,7 +212,7 @@ import { Icon } from "astro-icon/components"
                       type="number"
                       placeholder="3500"
                       min="0"
-                      class="border-border focus:ring-brand/40 w-full rounded-lg border bg-background px-4 py-3 pr-16 text-sm focus:ring-2 focus:outline-none"
+                      class="input-field pr-16"
                     />
                     <span
                       class="text-muted-foreground absolute top-1/2 right-4 -translate-y-1/2 text-sm"
@@ -241,7 +241,7 @@ import { Icon } from "astro-icon/components"
                     "Wartung und Support",
                     "Ausschliesslich Energieberatung",
                   ].map((item) => (
-                    <label class="border-border hover:border-brand/60 has-[:checked]:border-brand has-[:checked]:bg-brand/5 flex cursor-pointer items-center gap-3 rounded-lg border px-4 py-3 transition-colors">
+                    <label class="checkbox-card">
                       <input
                         type="checkbox"
                         name="leistungen"
@@ -253,7 +253,7 @@ import { Icon } from "astro-icon/components"
                   ))
                 }
                 <label
-                  class="border-border hover:border-brand/60 has-[:checked]:border-brand has-[:checked]:bg-brand/5 flex cursor-pointer items-center gap-3 rounded-lg border px-4 py-3 transition-colors"
+                  class="checkbox-card"
                 >
                   <input
                     type="checkbox"
@@ -273,7 +273,7 @@ import { Icon } from "astro-icon/components"
                     name="leistungen_sonstiges"
                     type="text"
                     placeholder="Weitere Anforderungen..."
-                    class="border-border focus:ring-brand/40 rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field"
                   />
                 </div>
               </div>
@@ -292,7 +292,7 @@ import { Icon } from "astro-icon/components"
                   <select
                     id="anhang-typ"
                     name="anhang_typ"
-                    class="border-border focus:ring-brand/40 cursor-pointer rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field cursor-pointer"
                   >
                     <option value="" selected>Bitte wählen...</option>
                     <option value="Allgemeine Gebäudepläne"
@@ -314,13 +314,13 @@ import { Icon } from "astro-icon/components"
                     name="anhang_typ_sonstiges"
                     type="text"
                     placeholder="Bitte beschreiben..."
-                    class="border-border focus:ring-brand/40 rounded-lg border bg-background px-4 py-3 text-sm focus:ring-2 focus:outline-none"
+                    class="input-field"
                   />
                 </div>
 
                 <label
                   id="upload-label"
-                  class="border-border hover:border-brand/60 flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed px-6 py-8 transition-colors"
+                  class="upload-dropzone"
                 >
                   <Icon
                     name="lucide:upload-cloud"
