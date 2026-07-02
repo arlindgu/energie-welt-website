@@ -7,7 +7,7 @@ import icon from "astro-icon"
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
+  output: "static",
   adapter: vercel(),
   integrations: [icon()],
   vite: {
@@ -16,24 +16,12 @@ export default defineConfig({
   fonts: [
     {
       provider: fontProviders.local(),
-      name: "Clash Display",
-      cssVariable: "--font-clash-display",
+      name: "Inter",
+      cssVariable: "--font-inter",
       options: {
         variants: [
           {
-            src: ["./src/assets/fonts/ClashDisplay-Variable.woff2"],
-          },
-        ],
-      },
-    },
-    {
-      provider: fontProviders.local(),
-      name: "Archivo",
-      cssVariable: "--font-archivo",
-      options: {
-        variants: [
-          {
-            src: ["./src/assets/fonts/Archivo-Variable.woff2"],
+            src: ["./src/assets/fonts/Inter-Variable.ttf"],
           },
         ],
       },

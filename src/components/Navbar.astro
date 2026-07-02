@@ -5,29 +5,32 @@ import LogoDark from "/logo_dark.svg?raw"
 ---
 
 <header
-  id="site-header"
-  class="fixed inset-x-0 z-50 bg-black/20 px-6 backdrop-blur-md transition-[background-color] duration-300"
+  id="navbar-shell"
+  class="fixed inset-x-0 top-10 z-50 px-10 transition-[top,padding] duration-300"
 >
-  <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between">
-    <a href="/">
-      <span id="logo-light" class="block"><Fragment set:html={LogoDark} /></span>
-      <span id="logo-dark" class="hidden"><Fragment set:html={LogoLight} /></span>
+  <nav
+    id="site-header"
+    class="mx-auto flex h-16 max-w-5xl items-center justify-between rounded-full bg-white pl-6 pr-2 transition-[background-color,max-width] duration-300"
+  >
+    <a href="/" class="[&_svg]:h-6 [&_svg]:w-auto">
+      <span id="logo-light" class="hidden"><Fragment set:html={LogoDark} /></span>
+      <span id="logo-dark" class="block"><Fragment set:html={LogoLight} /></span>
     </a>
 
     <div class="hidden items-center gap-8 md:flex">
       <a
         href="/#about"
-        class="nav-link text-sm text-white/70 transition-colors hover:text-white"
+        class="nav-link text-sm text-muted-foreground transition-colors hover:text-foreground"
         >Über uns</a
       >
       <a
         href="/#services"
-        class="nav-link text-sm text-white/70 transition-colors hover:text-white"
+        class="nav-link text-sm text-muted-foreground transition-colors hover:text-foreground"
         >Leistungen</a
       >
       <a
         href="/offerte"
-        class="nav-link text-sm text-white/70 transition-colors hover:text-white"
+        class="nav-link text-sm text-muted-foreground transition-colors hover:text-foreground"
         >Offerte</a
       >
     </div>
@@ -39,33 +42,33 @@ import LogoDark from "/logo_dark.svg?raw"
 
       <button
         id="menu-toggle"
-        class="flex flex-col gap-1.5 p-1 md:hidden"
+        class="flex flex-col gap-1.5 p-1 md:hidden mr-4"
         aria-label="Menü öffnen"
       >
-        <span class="hamburger-line block h-0.5 w-6 bg-white transition-all"></span>
-        <span class="hamburger-line block h-0.5 w-6 bg-white transition-all"></span>
-        <span class="hamburger-line block h-0.5 w-6 bg-white transition-all"></span>
+        <span class="hamburger-line block h-0.5 w-6 bg-foreground transition-all"></span>
+        <span class="hamburger-line block h-0.5 w-6 bg-foreground transition-all"></span>
+        <span class="hamburger-line block h-0.5 w-6 bg-foreground transition-all"></span>
       </button>
     </div>
   </nav>
 
   <div
     id="mobile-menu"
-    class="flex hidden flex-col gap-4 border-t border-white/10 bg-black py-4 md:hidden"
+    class="mx-auto mt-2 flex hidden max-w-6xl flex-col gap-4 rounded-2xl bg-white px-6 py-4 md:hidden"
   >
     <a
       href="/#about"
-      class="mobile-link py-2 text-sm text-white/70 transition-colors hover:text-white"
+      class="mobile-link py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
       >Über uns</a
     >
     <a
       href="/#services"
-      class="mobile-link py-2 text-sm text-white/70 transition-colors hover:text-white"
+      class="mobile-link py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
       >Leistungen</a
     >
     <a
       href="/offerte"
-      class="mobile-link py-2 text-sm text-white/70 transition-colors hover:text-white"
+      class="mobile-link py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
       >Offerte</a
     >
     <a href="/offerte" class="btn-primary">Offerte einholen</a>
@@ -74,6 +77,7 @@ import LogoDark from "/logo_dark.svg?raw"
 
 <script>
   const header = document.getElementById("site-header")
+  const navbarShell = document.getElementById("navbar-shell")
   const logoLight = document.getElementById("logo-light")
   const logoDark = document.getElementById("logo-dark")
   const navLinks = document.querySelectorAll(".nav-link")
@@ -86,40 +90,50 @@ import LogoDark from "/logo_dark.svg?raw"
     mobileMenu?.classList.toggle("hidden")
   })
 
+  document.querySelectorAll("#mobile-menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden")
+    })
+  })
+
   function setScrolled(scrolled: boolean) {
     if (scrolled) {
-      header?.classList.remove("bg-black/20", "backdrop-blur-md")
-      header?.classList.add("bg-white")
-      logoLight?.classList.add("hidden")
-      logoDark?.classList.remove("hidden")
-      mobileMenu?.classList.remove("bg-black", "border-white/10")
-      mobileMenu?.classList.add("bg-white", "border-border")
-    } else {
-      header?.classList.remove("bg-white")
-      header?.classList.add("bg-black/20", "backdrop-blur-md")
+      header?.classList.remove("bg-white", "max-w-5xl")
+      header?.classList.add("bg-black", "max-w-6xl")
+      navbarShell?.classList.remove("top-10", "px-10")
+      navbarShell?.classList.add("top-4", "px-6")
       logoDark?.classList.add("hidden")
       logoLight?.classList.remove("hidden")
       mobileMenu?.classList.remove("bg-white", "border-border")
       mobileMenu?.classList.add("bg-black", "border-white/10")
+    } else {
+      header?.classList.remove("bg-black", "max-w-6xl")
+      header?.classList.add("bg-white", "max-w-5xl")
+      navbarShell?.classList.remove("top-4", "px-6")
+      navbarShell?.classList.add("top-10", "px-10")
+      logoLight?.classList.add("hidden")
+      logoDark?.classList.remove("hidden")
+      mobileMenu?.classList.remove("bg-black", "border-white/10")
+      mobileMenu?.classList.add("bg-white", "border-border")
     }
 
     navLinks.forEach((link) => {
-      link.classList.toggle("text-white/70", !scrolled)
-      link.classList.toggle("hover:text-white", !scrolled)
-      link.classList.toggle("text-muted-foreground", scrolled)
-      link.classList.toggle("hover:text-foreground", scrolled)
+      link.classList.toggle("text-white/70", scrolled)
+      link.classList.toggle("hover:text-white", scrolled)
+      link.classList.toggle("text-muted-foreground", !scrolled)
+      link.classList.toggle("hover:text-foreground", !scrolled)
     })
 
     hamburgerLines.forEach((line) => {
-      line.classList.toggle("bg-white", !scrolled)
-      line.classList.toggle("bg-foreground", scrolled)
+      line.classList.toggle("bg-white", scrolled)
+      line.classList.toggle("bg-foreground", !scrolled)
     })
 
     mobileLinks.forEach((link) => {
-      link.classList.toggle("text-white/70", !scrolled)
-      link.classList.toggle("hover:text-white", !scrolled)
-      link.classList.toggle("text-muted-foreground", scrolled)
-      link.classList.toggle("hover:text-foreground", scrolled)
+      link.classList.toggle("text-white/70", scrolled)
+      link.classList.toggle("hover:text-white", scrolled)
+      link.classList.toggle("text-muted-foreground", !scrolled)
+      link.classList.toggle("hover:text-foreground", !scrolled)
     })
   }
 

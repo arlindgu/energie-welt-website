@@ -17,17 +17,32 @@
   --color-brand-foreground: oklch(0.7791 0.1832 119.99);
   --color-foreground: oklch(0.2134 0 0);
   --color-background: oklch(1 0 0);
-  --font-body: var(--font-archivo);
-  --font-heading: var(--font-clash-display);
+
+  --font-body: var(--font-inter);
+  --font-heading: var(--font-inter);
+
   --radius: 4rem;
+
+  --animate-marquee: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @layer components {
   .btn-primary {
     cursor: pointer;
     background-color: var(--color-brand-300);
-    padding: 0.5rem 1rem;
-    color: var(--color-foreground);
+    padding: 1em 1.5em;
+    display: inline-block;
+    line-height: 1;
+    color: var(--color-background);
     border-radius: var(--radius);
   }
 
@@ -37,14 +52,36 @@
       color 0.3s ease;
     background-color: var(--color-brand-400);
   }
+
+  .btn-secondary {
+    cursor: pointer;
+    border: 1px solid var(--color-brand-300);
+    padding: 1em 1.5em;
+    display: inline-block;
+    line-height: 1;
+    color: var(--color-background);
+    border-radius: var(--radius);
+  }
+
+  .btn-secondary:hover {
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  .animated {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 }
 
 @layer base {
   body {
     font-weight: 400;
     font-size: var(--font-size);
-    line-height: var(--line-height);
-    letter-spacing: var(--letter-space);
     font-family: var(--font-body);
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -60,18 +97,19 @@
   h1.display {
     font-size: clamp(2.986rem, 5vw, 3.5832rem);
     line-height: 1.1;
-    font-weight: 500;
+    font-weight: 700;
+    letter-spacing: -0.01em;
   }
 
   h1 {
     font-size: 2.986rem;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.1;
   }
 
   h2 {
     font-size: 2.488rem;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.1;
   }
 
