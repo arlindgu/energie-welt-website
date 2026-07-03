@@ -1,26 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-25: oklch(0.95 0.085 148.02);
-  --color-brand-50: oklch(0.904 0.178 148.02);
-  --color-brand-100: oklch(0.857 0.248 148.02);
-  --color-brand-200: oklch(0.811 0.235 148.02);
-  --color-brand-300: oklch(0.764 0.221 148.02);
-  --color-brand-400: oklch(0.718 0.208 148.02);
-  --color-brand-500: oklch(0.672 0.194 148.02);
-  --color-brand-600: oklch(0.625 0.181 148.02);
-  --color-brand-700: oklch(0.579 0.167 148.02);
-  --color-brand-800: oklch(0.533 0.154 148.02);
-  --color-brand-900: oklch(0.486 0.141 148.02);
-  --color-brand-950: oklch(0.44 0.127 148.02);
-  --color-brand-975: oklch(0.393 0.114 148.02);
-  --color-brand-foreground: oklch(0.7791 0.1832 119.99);
+  --color-steel-900: oklch(0.2 0.003 240);
+  --color-steel-800: oklch(0.3 0.004 240);
+  --color-steel-700: oklch(0.4 0.005 240);
+  --color-steel-600: oklch(0.54 0.006 240);
+  --color-steel-500: oklch(0.75 0.005 240);
+  --color-steel-400: oklch(0.85 0.004 240);
+  --color-steel-300: oklch(0.9 0.003 240);
+  --color-steel-200: oklch(0.94 0.002 240);
+  --color-steel-100: oklch(0.98 0.001 240);
+
+  --color-brand-950: oklch(0.175 0.032 165);
+  --color-brand-900: oklch(0.206 0.045 165);
+  --color-brand-800: oklch(0.269 0.083 165);
+  --color-brand-700: oklch(0.318 0.113 165);
+  --color-brand-600: oklch(0.363 0.138 165);
+  --color-brand-500: oklch(0.413 0.161 165);
+  --color-brand-400: oklch(0.48 0.183 165);
+  --color-brand-300: oklch(0.566 0.202 165);
+  --color-brand-200: oklch(0.609 0.192 165);
+  --color-brand-150: oklch(0.662 0.178 165);
+  --color-brand-100: oklch(0.831 0.115 165);
+  --color-brand-50: oklch(0.912 0.068 165);
+
   --color-brand: var(--color-brand-300);
-  --color-foreground: oklch(0.2134 0 0);
-  --color-background: oklch(1 0 0);
-  --color-border: oklch(0.2134 0 0 / 0.12);
-  --color-muted: oklch(0.97 0 0);
-  --color-muted-foreground: oklch(0.2134 0 0 / 0.6);
+  --color-foreground: var(--color-steel-900);
+  --color-background: var(--color-steel-100);
+  --color-muted: var(--color-steel-200);
+  --color-muted-foreground: var(--color-steel-600);
+  --color-border: oklch(from var(--color-steel-900) l c h / 0.12);
 
   --font-body: var(--font-inter);
   --font-heading: var(--font-inter);
@@ -70,10 +79,11 @@
   .btn-secondary:hover {
     transition:
       background-color 0.3s ease,
+      border-color 0.3s ease,
       color 0.3s ease;
-    background-color: var(--color-background);
-    border: 1px solid var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--color-brand-300);
+    border: 1px solid var(--color-brand-300);
+    color: var(--color-background);
   }
 
   .btn-white {
@@ -90,7 +100,7 @@
     transition:
       background-color 0.3s ease,
       color 0.3s ease;
-    background-color: var(--color-brand-950);
+    background-color: var(--color-brand-800);
     color: var(--color-background);
   }
 
@@ -124,6 +134,7 @@
     gap: 0.75rem;
     border-radius: 0.5rem;
     border: 1px solid var(--color-border);
+    background-color: var(--color-background);
     padding: 0.75rem 1rem;
     transition:
       border-color 0.2s ease,
@@ -148,6 +159,7 @@
     gap: 0.5rem;
     border-radius: 0.5rem;
     border: 2px dashed var(--color-border);
+    background-color: var(--color-background);
     padding: 2rem 1.5rem;
     transition: border-color 0.2s ease;
   }
@@ -159,10 +171,11 @@
   .stat-card {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 0.375rem;
     padding: 1.75rem;
     border-radius: 1.25rem;
-    background-color: var(--color-brand-25);
+    background-color: var(--color-muted);
   }
 
   .stat-card-value {

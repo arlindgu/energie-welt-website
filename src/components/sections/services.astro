@@ -42,11 +42,11 @@ const content = [
         content.map((item) => (
           <div class="relative h-96 w-full lg:flex-1 overflow-hidden rounded-2xl">
             <img src={item.image} alt={item.title} class="absolute inset-0 w-full h-full object-cover" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div class="absolute inset-0 bg-gradient-to-t from-steel-900/80 via-steel-900/20 to-transparent" />
             <div class="absolute right-0 bottom-0 left-0 flex items-end justify-between p-6">
               <div class="flex flex-col gap-3">
                 <div class="w-12 h-12 text-brand-300" set:html={item.icon} />
-                <p class="font-heading text-xl font-semibold text-white">
+                <p class="font-heading text-xl font-semibold text-steel-100">
                   {item.title}
                 </p>
               </div>

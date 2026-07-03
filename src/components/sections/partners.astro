@@ -10,13 +10,13 @@ const partners = [partner1, partner2, partner3, partner4, partner5, partner6]
 ---
 
 <div class="w-full pb-8">
-  <p class="text-center text-xs text-white">Unternehmen, die uns vertrauen</p>
+  <p class="text-center text-xs text-steel-100">Unternehmen, die uns vertrauen</p>
 
   <div
     class="mt-4 overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
   >
     <div
-      class="flex w-max animate-marquee items-center gap-16 text-white/90 [&_svg]:h-8 [&_svg]:w-auto"
+      class="flex w-max animate-marquee items-center gap-16 text-steel-100/90 [&_svg]:h-8 [&_svg]:w-auto"
     >
       {[...partners, ...partners].map((logo) => <div set:html={logo} />)}
     </div>

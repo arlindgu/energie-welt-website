@@ -5,18 +5,40 @@ import { Icon } from "astro-icon/components"
 
 <Layout>
   <section class="min-h-screen">
-    <div class="bg-brand px-6 py-32">
-      <div class="mx-auto max-w-6xl">
-        <p
-          class="text-sm font-semibold tracking-wider text-background/95 uppercase"
-        >
-          Kostenlos und unverbindlich
-        </p>
+    <div class="relative overflow-hidden bg-brand-300 px-6 pt-40 pb-20 sm:pt-48 sm:pb-24">
+      <Icon
+        name="lucide:sun"
+        class="pointer-events-none absolute -top-16 -right-16 h-72 w-72 text-brand-950/10 sm:h-96 sm:w-96"
+      />
+
+      <div class="relative mx-auto max-w-6xl">
         <h1
           class="font-heading text-5xl leading-tight font-semibold text-background md:text-6xl"
         >
           Offerte einholen
         </h1>
+        <p class="mt-4 max-w-xl text-lg leading-relaxed text-background/80">
+          Erzählen Sie uns von Ihrem Projekt – wir melden uns innerhalb von
+          24 Stunden mit einer unverbindlichen Offerte.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <span
+            class="inline-flex items-center gap-2 rounded-full bg-background/15 px-4 py-2 text-sm font-medium text-background"
+          >
+            <Icon name="lucide:circle-check" class="h-4 w-4" /> Kostenlos
+          </span>
+          <span
+            class="inline-flex items-center gap-2 rounded-full bg-background/15 px-4 py-2 text-sm font-medium text-background"
+          >
+            <Icon name="lucide:circle-check" class="h-4 w-4" /> Unverbindlich
+          </span>
+          <span
+            class="inline-flex items-center gap-2 rounded-full bg-background/15 px-4 py-2 text-sm font-medium text-background"
+          >
+            <Icon name="lucide:clock" class="h-4 w-4" /> Antwort in 24 Std.
+          </span>
+        </div>
       </div>
     </div>
 
@@ -29,12 +51,13 @@ import { Icon } from "astro-icon/components"
             enctype="multipart/form-data"
           >
             <!-- Persönliche Angaben -->
-            <div>
-              <p
-                class="text-muted-foreground mb-5 text-xs font-semibold tracking-widest uppercase"
-              >
-                Persönliche Angaben
-              </p>
+            <div class="rounded-2xl border border-border bg-muted p-6 sm:p-8">
+              <div class="mb-6 flex items-center gap-2.5">
+                <Icon name="lucide:user" class="text-brand h-5 w-5" />
+                <p class="text-lg font-semibold text-foreground">
+                  Persönliche Angaben
+                </p>
+              </div>
               <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
                 <div class="flex flex-col gap-1.5">
                   <label class="text-sm font-medium">Name</label>
@@ -69,12 +92,13 @@ import { Icon } from "astro-icon/components"
             </div>
 
             <!-- Objektadresse -->
-            <div>
-              <p
-                class="text-muted-foreground mb-5 text-xs font-semibold tracking-widest uppercase"
-              >
-                Objektadresse
-              </p>
+            <div class="rounded-2xl border border-border bg-muted p-6 sm:p-8">
+              <div class="mb-6 flex items-center gap-2.5">
+                <Icon name="lucide:map-pin" class="text-brand h-5 w-5" />
+                <p class="text-lg font-semibold text-foreground">
+                  Objektadresse
+                </p>
+              </div>
               <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
                 <div class="relative flex flex-col gap-1.5 sm:col-span-3">
                   <label class="text-sm font-medium"
@@ -163,12 +187,13 @@ import { Icon } from "astro-icon/components"
             </div>
 
             <!-- Objekt und Projektdetails -->
-            <div>
-              <p
-                class="text-muted-foreground mb-5 text-xs font-semibold tracking-widest uppercase"
-              >
-                Objekt und Projektdetails
-              </p>
+            <div class="rounded-2xl border border-border bg-muted p-6 sm:p-8">
+              <div class="mb-6 flex items-center gap-2.5">
+                <Icon name="lucide:house" class="text-brand h-5 w-5" />
+                <p class="text-lg font-semibold text-foreground">
+                  Objekt und Projektdetails
+                </p>
+              </div>
               <div class="flex flex-col gap-4">
                 <div class="flex flex-col gap-1.5">
                   <label class="text-sm font-medium">Dachtyp</label>
@@ -224,13 +249,14 @@ import { Icon } from "astro-icon/components"
             </div>
 
             <!-- Anfragedetails -->
-            <div>
-              <p
-                class="text-muted-foreground mb-5 text-xs font-semibold tracking-widest uppercase"
-              >
-                Anfragedetails
-              </p>
-              <div class="flex flex-col gap-3">
+            <div class="rounded-2xl border border-border bg-muted p-6 sm:p-8">
+              <div class="mb-6 flex items-center gap-2.5">
+                <Icon name="lucide:list-checks" class="text-brand h-5 w-5" />
+                <p class="text-lg font-semibold text-foreground">
+                  Anfragedetails
+                </p>
+              </div>
+              <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
                 {
                   [
                     "PV-Anlage inkl. Wechselrichter",
@@ -266,7 +292,7 @@ import { Icon } from "astro-icon/components"
                 </label>
                 <div
                   id="leistung-sonstiges-field"
-                  class="flex hidden flex-col gap-1.5"
+                  class="flex hidden flex-col gap-1.5 sm:col-span-2"
                 >
                   <label class="text-sm font-medium">Bitte beschreiben</label>
                   <input
@@ -280,12 +306,13 @@ import { Icon } from "astro-icon/components"
             </div>
 
             <!-- Anhänge -->
-            <div>
-              <p
-                class="text-muted-foreground mb-5 text-xs font-semibold tracking-widest uppercase"
-              >
-                Anhänge
-              </p>
+            <div class="rounded-2xl border border-border bg-muted p-6 sm:p-8">
+              <div class="mb-6 flex items-center gap-2.5">
+                <Icon name="lucide:paperclip" class="text-brand h-5 w-5" />
+                <p class="text-lg font-semibold text-foreground">
+                  Anhänge
+                </p>
+              </div>
               <div class="flex flex-col gap-3">
                 <div class="flex flex-col gap-1.5">
                   <label class="text-sm font-medium">Art des Anhangs</label>
@@ -360,7 +387,7 @@ import { Icon } from "astro-icon/components"
         </div>
 
         <div class="flex flex-col gap-6">
-          <div class="bg-muted flex flex-col gap-5 rounded-2xl p-6">
+          <div class="border-border bg-muted flex flex-col gap-5 rounded-2xl border p-6">
             <p class="text-sm font-semibold">Was passiert nach der Anfrage?</p>
             {
               [
@@ -547,7 +574,7 @@ import { Icon } from "astro-icon/components"
       feedback.textContent =
         "Ihre Anfrage wurde erfolgreich gesendet. Wir melden uns bald!"
       feedback.className =
-        "text-sm rounded-lg px-4 py-3 bg-green-50 text-green-700 border border-green-200"
+        "text-sm rounded-lg px-4 py-3 bg-brand-50 text-brand-800 border border-brand-100"
       form.reset()
       objektzustandAnderesField.classList.add("hidden")
       dachtypAnderesField.classList.add("hidden")
