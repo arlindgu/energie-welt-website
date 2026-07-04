@@ -1,7 +1,7 @@
 export const site = {
   name: "EnergieWelt",
   description:
-    "Nachhaltige Energielösungen für Privat- und Gewerbekunden – effizient, zuverlässig und zukunftssicher.",
+    "Nachhaltige Energielösungen für Privat- und Gewerbekunden: effizient, zuverlässig und zukunftssicher.",
 
   contact: {
     email: "info@energie-welt.ch",

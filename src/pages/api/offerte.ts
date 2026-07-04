@@ -41,23 +41,23 @@ export const POST: APIRoute = async ({ request }) => {
 
   const objektzustandLabel =
     objektzustand === "Anderes" && objektzustand_anderes
-      ? `Anderes – ${objektzustand_anderes}`
+      ? `Anderes: ${objektzustand_anderes}`
       : objektzustand
 
   const dachtypLabel =
     dachtyp === "Anderes" && dachtyp_anderes
-      ? `Anderes – ${dachtyp_anderes}`
+      ? `Anderes: ${dachtyp_anderes}`
       : dachtyp
 
   const leistungenLabel = leistungen.length
     ? leistungen
-        .map((l) => (l === "Sonstiges" && leistungen_sonstiges ? `Sonstiges – ${leistungen_sonstiges}` : l))
+        .map((l) => (l === "Sonstiges" && leistungen_sonstiges ? `Sonstiges: ${leistungen_sonstiges}` : l))
         .join(", ")
-    : "–"
+    : "Keine Angabe"
 
   const anhangTypLabel =
     anhang_typ === "Sonstiges" && anhang_typ_sonstiges
-      ? `Sonstiges – ${anhang_typ_sonstiges}`
+      ? `Sonstiges: ${anhang_typ_sonstiges}`
       : anhang_typ
 
   const resend = new Resend(import.meta.env.RESEND_API_KEY)
@@ -74,7 +74,7 @@ export const POST: APIRoute = async ({ request }) => {
       <h3>Persönliche Angaben</h3>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>E-Mail:</strong> ${email}</p>
-      <p><strong>Telefon:</strong> ${telefon || "–"}</p>
+      <p><strong>Telefon:</strong> ${telefon || "Keine Angabe"}</p>
 
       <h3>Objektadresse</h3>
       <p><strong>Adresse:</strong> ${strasse}, ${plz} ${ort}</p>
@@ -83,7 +83,7 @@ export const POST: APIRoute = async ({ request }) => {
 
       <h3>Objekt und Projektdetails</h3>
       <p><strong>Dachtyp:</strong> ${dachtypLabel}</p>
-      <p><strong>Stromverbrauch:</strong> ${verbrauch ? `${verbrauch} kWh/Jahr` : "–"}</p>
+      <p><strong>Stromverbrauch:</strong> ${verbrauch ? `${verbrauch} kWh/Jahr` : "Keine Angabe"}</p>
 
       <h3>Anfragedetails</h3>
       <p><strong>Gewünschte Leistungen:</strong> ${leistungenLabel}</p>

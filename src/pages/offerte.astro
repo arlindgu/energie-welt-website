@@ -18,7 +18,7 @@ import { Icon } from "astro-icon/components"
           Offerte einholen
         </h1>
         <p class="mt-4 max-w-xl text-lg leading-relaxed text-background/80">
-          Erzählen Sie uns von Ihrem Projekt – wir melden uns innerhalb von
+          Erzählen Sie uns von Ihrem Projekt. Wir melden uns innerhalb von
           24 Stunden mit einer unverbindlichen Offerte.
         </p>
 
@@ -174,7 +174,7 @@ import { Icon } from "astro-icon/components"
                   class="flex hidden flex-col gap-1.5 sm:col-span-3"
                 >
                   <label class="text-sm font-medium"
-                    >Objektzustand – bitte beschreiben</label
+                    >Objektzustand: bitte beschreiben</label
                   >
                   <input
                     name="objektzustand_anderes"
@@ -214,7 +214,7 @@ import { Icon } from "astro-icon/components"
                   class="flex hidden flex-col gap-1.5"
                 >
                   <label class="text-sm font-medium"
-                    >Dachtyp – bitte beschreiben</label
+                    >Dachtyp: bitte beschreiben</label
                   >
                   <input
                     name="dachtyp_anderes"
@@ -335,7 +335,7 @@ import { Icon } from "astro-icon/components"
                   class="flex hidden flex-col gap-1.5"
                 >
                   <label class="text-sm font-medium"
-                    >Art des Anhangs – bitte beschreiben</label
+                    >Art des Anhangs: bitte beschreiben</label
                   >
                   <input
                     name="anhang_typ_sonstiges"
@@ -387,7 +387,7 @@ import { Icon } from "astro-icon/components"
         </div>
 
         <div class="flex flex-col gap-6">
-          <div class="border-border bg-muted flex flex-col gap-5 rounded-2xl border p-6">
+          <div class="border-border flex flex-col gap-5 rounded-2xl border p-6">
             <p class="text-sm font-semibold">Was passiert nach der Anfrage?</p>
             {
               [
@@ -405,8 +405,8 @@ import { Icon } from "astro-icon/components"
                 },
               ].map((step) => (
                 <div class="flex items-start gap-3">
-                  <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-background">
-                    <Icon name={step.icon} class="h-4 w-4 text-foreground" />
+                  <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-200">
+                    <Icon name={step.icon} class="h-4 w-4 text-background" />
                   </div>
                   <p class="text-muted-foreground text-sm leading-relaxed">
                     {step.text}
@@ -419,7 +419,7 @@ import { Icon } from "astro-icon/components"
           <div class="border-border flex flex-col gap-3 rounded-2xl border p-6">
             <p class="text-sm font-semibold">Lieber direkt sprechen?</p>
             <p
-            class="text-muted-foreground flex items-center gap-2 text-sm transition-colors hover:text-foreground"
+            class="text-muted-foreground flex items-center gap-2 text-sm transition-colors"
             >
             <Icon name="lucide:user-round-pen" class="h-4 w-4" />
               Liridon Cakolli

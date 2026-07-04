@@ -24,14 +24,14 @@ const stats = [
         </p>
         <p class="text-muted-foreground leading-relaxed">
           Unser Team aus erfahrenen Energieberatern und Ingenieuren steht Ihnen
-          bei jedem Schritt zur Seite – von der ersten Beratung bis zur vollständigen
+          bei jedem Schritt zur Seite, von der ersten Beratung bis zur vollständigen
           Installation und darüber hinaus.
         </p>
       </div>
     </div>
 
     <div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-      {stats.map((stat) => <StatCard value={stat.value} label={stat.label} />)}
+      {stats.map((stat) => <StatCard value={stat.value} label={stat.label}/>)}
     </div>
   </div>
 </section>
