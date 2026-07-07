@@ -1,0 +1,55 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
+<div class="rounded-2xl border border-border bg-muted p-6 sm:p-8">
+  <div class="mb-6 flex items-center gap-2.5">
+    <Icon name="lucide:house" class="text-brand h-5 w-5" />
+    <p class="text-lg font-semibold text-foreground">Objekt und Projektdetails</p>
+  </div>
+  <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-1.5">
+      <label class="text-sm font-medium">Dachtyp</label>
+      <select
+        id="dachtyp"
+        name="dachtyp"
+        required
+        class="input-field cursor-pointer"
+      >
+        <option value="" disabled selected>Bitte wählen...</option>
+        <option value="Indach">Indach</option>
+        <option value="Flachdach">Flachdach</option>
+        <option value="Schrägdach">Schrägdach</option>
+        <option value="Anderes">Anderes</option>
+      </select>
+    </div>
+    <div id="dachtyp-anderes-field" class="flex hidden flex-col gap-1.5">
+      <label class="text-sm font-medium">Dachtyp: bitte beschreiben</label>
+      <input
+        name="dachtyp_anderes"
+        type="text"
+        placeholder="z.B. Carport, Fassade, ..."
+        class="input-field"
+      />
+    </div>
+
+    <div class="flex flex-col gap-1.5">
+      <label class="flex items-center gap-2 text-sm font-medium">
+        Jährlicher Stromverbrauch
+        <span class="text-muted-foreground text-xs font-normal">(optional)</span>
+      </label>
+      <div class="relative">
+        <input
+          name="verbrauch"
+          type="number"
+          placeholder="3500"
+          min="0"
+          class="input-field pr-16"
+        />
+        <span class="text-muted-foreground absolute top-1/2 right-4 -translate-y-1/2 text-sm"
+          >kWh/J</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

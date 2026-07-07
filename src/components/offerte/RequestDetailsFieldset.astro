@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components"
+
+const leistungen = [
+  "PV-Anlage inkl. Wechselrichter",
+  "Batterie",
+  "E-Auto Ladestation",
+  "Energiemanagementsystem (Verbindung mit Wärmepumpe / Boiler)",
+  "Erweiterung bestehende Anlage",
+  "Wartung und Support",
+  "Ausschliesslich Energieberatung",
+]
+---
+
+<div class="rounded-2xl border border-border bg-muted p-6 sm:p-8">
+  <div class="mb-6 flex items-center gap-2.5">
+    <Icon name="lucide:list-checks" class="text-brand h-5 w-5" />
+    <p class="text-lg font-semibold text-foreground">Anfragedetails</p>
+  </div>
+  <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+    {
+      leistungen.map((item) => (
+        <label class="checkbox-card">
+          <input
+            type="checkbox"
+            name="leistungen"
+            value={item}
+            class="accent-brand h-4 w-4"
+          />
+          <span class="text-sm font-medium">{item}</span>
+        </label>
+      ))
+    }
+    <label class="checkbox-card">
+      <input
+        type="checkbox"
+        id="leistung-sonstiges-cb"
+        name="leistungen"
+        value="Sonstiges"
+        class="accent-brand h-4 w-4"
+      />
+      <span class="text-sm font-medium">Sonstiges</span>
+    </label>
+    <div
+      id="leistung-sonstiges-field"
+      class="flex hidden flex-col gap-1.5 sm:col-span-2"
+    >
+      <label class="text-sm font-medium">Bitte beschreiben</label>
+      <input
+        name="leistungen_sonstiges"
+        type="text"
+        placeholder="Weitere Anforderungen..."
+        class="input-field"
+      />
+    </div>
+  </div>
+</div>

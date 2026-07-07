@@ -1,0 +1,54 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
+<div class="rounded-2xl border border-border bg-muted p-6 sm:p-8">
+  <div class="mb-6 flex items-center gap-2.5">
+    <Icon name="lucide:paperclip" class="text-brand h-5 w-5" />
+    <p class="text-lg font-semibold text-foreground">Anhänge</p>
+  </div>
+  <div class="flex flex-col gap-3">
+    <div class="flex flex-col gap-1.5">
+      <label class="text-sm font-medium">Art des Anhangs</label>
+      <select
+        id="anhang-typ"
+        name="anhang_typ"
+        class="input-field cursor-pointer"
+      >
+        <option value="" selected>Bitte wählen...</option>
+        <option value="Allgemeine Gebäudepläne">Allgemeine Gebäudepläne</option>
+        <option value="Dachpläne">Dachpläne</option>
+        <option value="Ausschreibung">Ausschreibung</option>
+        <option value="Sonstiges">Sonstiges</option>
+      </select>
+    </div>
+    <div id="anhang-typ-anderes-field" class="flex hidden flex-col gap-1.5">
+      <label class="text-sm font-medium">Art des Anhangs: bitte beschreiben</label>
+      <input
+        name="anhang_typ_sonstiges"
+        type="text"
+        placeholder="Bitte beschreiben..."
+        class="input-field"
+      />
+    </div>
+
+    <label id="upload-label" class="upload-dropzone">
+      <Icon name="lucide:upload-cloud" class="h-8 w-8 text-muted-foreground" />
+      <span class="text-sm text-muted-foreground"
+        >PDF-Dateien hier ablegen oder <span class="font-medium text-foreground"
+          >auswählen</span
+        ></span
+      >
+      <span class="text-muted-foreground text-xs">Maximal 10 MB pro Datei</span>
+      <input
+        id="anhaenge"
+        name="anhaenge"
+        type="file"
+        accept=".pdf"
+        multiple
+        class="hidden"
+      />
+    </label>
+    <div id="file-list" class="flex flex-col gap-2"></div>
+  </div>
+</div>

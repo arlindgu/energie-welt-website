@@ -1,0 +1,27 @@
+---
+import { Icon } from "astro-icon/components"
+import Pill from "@/components/ui/Pill.astro"
+---
+
+<div class="relative overflow-hidden bg-brand-300 px-6 pt-40 pb-20 sm:pt-48 sm:pb-24">
+  <Icon
+    name="lucide:sun"
+    class="pointer-events-none absolute -top-16 -right-16 h-72 w-72 text-brand-950/10 sm:h-96 sm:w-96"
+  />
+
+  <div class="relative mx-auto max-w-6xl">
+    <h1 class="font-heading text-5xl leading-tight font-semibold text-background md:text-6xl">
+      Offerte einholen
+    </h1>
+    <p class="mt-4 max-w-xl text-lg leading-relaxed text-background/80">
+      Erzählen Sie uns von Ihrem Projekt. Wir melden uns innerhalb von 24
+      Stunden mit einer unverbindlichen Offerte.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      <Pill icon="lucide:circle-check" label="Kostenlos" />
+      <Pill icon="lucide:circle-check" label="Unverbindlich" />
+      <Pill icon="lucide:clock" label="Antwort in 24 Std." />
+    </div>
+  </div>
+</div>

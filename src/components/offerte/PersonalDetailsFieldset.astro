@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
+<div class="rounded-2xl border border-border bg-muted p-6 sm:p-8">
+  <div class="mb-6 flex items-center gap-2.5">
+    <Icon name="lucide:user" class="text-brand h-5 w-5" />
+    <p class="text-lg font-semibold text-foreground">Persönliche Angaben</p>
+  </div>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+    <div class="flex flex-col gap-1.5">
+      <label class="text-sm font-medium">Name</label>
+      <input
+        name="name"
+        type="text"
+        placeholder="Max Mustermann"
+        required
+        class="input-field"
+      />
+    </div>
+    <div class="flex flex-col gap-1.5">
+      <label class="text-sm font-medium">E-Mail</label>
+      <input
+        name="email"
+        type="email"
+        placeholder="max@beispiel.ch"
+        required
+        class="input-field"
+      />
+    </div>
+    <div class="flex flex-col gap-1.5 sm:col-span-2">
+      <label class="text-sm font-medium">Telefonnummer</label>
+      <input
+        name="telefon"
+        type="tel"
+        placeholder="+41 00 000 00 00"
+        class="input-field"
+      />
+    </div>
+  </div>
+</div>

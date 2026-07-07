@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components"
+import { site } from "@/config/site"
+
+const steps = [
+  {
+    icon: "lucide:phone-call",
+    text: "Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+  },
+  {
+    icon: "lucide:calendar-check",
+    text: "Wir vereinbaren einen kostenlosen Vor-Ort-Termin.",
+  },
+  {
+    icon: "lucide:file-text",
+    text: "Sie erhalten eine detaillierte, unverbindliche Offerte.",
+  },
+]
+---
+
+<div class="flex flex-col gap-6">
+  <div class="border-border flex flex-col gap-5 rounded-2xl border p-6">
+    <p class="text-sm font-semibold">Was passiert nach der Anfrage?</p>
+    {
+      steps.map((step) => (
+        <div class="flex items-start gap-3">
+          <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-brand-200">
+            <Icon name={step.icon} class="h-4 w-4 text-background" />
+          </div>
+          <p class="text-muted-foreground text-sm leading-relaxed">{step.text}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="border-border flex flex-col gap-3 rounded-2xl border p-6">
+    <p class="text-sm font-semibold">Lieber direkt sprechen?</p>
+    <p class="text-muted-foreground flex items-center gap-2 text-sm transition-colors">
+      <Icon name="lucide:user-round-pen" class="h-4 w-4" />
+      {site.legal.responsible}
+    </p>
+    <a
+      href={site.contact.phoneHref}
+      class="text-muted-foreground flex items-center gap-2 text-sm transition-colors hover:text-foreground"
+    >
+      <Icon name="lucide:phone" class="h-4 w-4" />
+      {site.contact.phone}
+    </a>
+    <a
+      href={`mailto:${site.contact.email}`}
+      class="text-muted-foreground flex items-center gap-2 text-sm transition-colors hover:text-foreground"
+    >
+      <Icon name="lucide:mail" class="h-4 w-4" />
+      {site.contact.email}
+    </a>
+  </div>
+</div>

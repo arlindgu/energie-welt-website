@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro"
 import { Resend } from "resend"
 import { site } from "@/config/site"
+import { jsonError, jsonSuccess } from "@/lib/api-response"
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData()
@@ -23,10 +24,7 @@ export const POST: APIRoute = async ({ request }) => {
   const anhang_typ_sonstiges = data.get("anhang_typ_sonstiges")?.toString().trim()
 
   if (!name || !email || !strasse || !plz || !ort || !objektzustand || !gebaeude_typ || !dachtyp) {
-    return new Response(JSON.stringify({ error: "Bitte füllen Sie alle Pflichtfelder aus." }), {
-      status: 400,
-      headers: { "Content-Type": "application/json" },
-    })
+    return jsonError("Bitte füllen Sie alle Pflichtfelder aus.")
   }
 
   // Build attachments from uploaded PDFs
@@ -98,14 +96,8 @@ export const POST: APIRoute = async ({ request }) => {
 
   if (error) {
     console.error("[offerte] Resend error:", error)
-    return new Response(JSON.stringify({ error: "Anfrage konnte nicht gesendet werden." }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    })
+    return jsonError("Anfrage konnte nicht gesendet werden.", 500)
   }
 
-  return new Response(JSON.stringify({ success: true }), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  })
+  return jsonSuccess()
 }

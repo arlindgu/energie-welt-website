@@ -1,0 +1,91 @@
+---
+import { Icon } from "astro-icon/components"
+---
+
+<div class="rounded-2xl border border-border bg-muted p-6 sm:p-8">
+  <div class="mb-6 flex items-center gap-2.5">
+    <Icon name="lucide:map-pin" class="text-brand h-5 w-5" />
+    <p class="text-lg font-semibold text-foreground">Objektadresse</p>
+  </div>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+    <div class="relative flex flex-col gap-1.5 sm:col-span-3">
+      <label class="text-sm font-medium">Strasse und Hausnummer</label>
+      <input
+        id="strasse"
+        name="strasse"
+        type="text"
+        placeholder="Musterstrasse 1"
+        autocomplete="off"
+        required
+        class="input-field"
+      />
+      <div
+        id="strasse-suggestions"
+        class="border-border absolute top-full right-0 left-0 z-20 mt-1 hidden max-h-64 overflow-y-auto rounded-lg border bg-background shadow-lg"
+      >
+      </div>
+    </div>
+    <div class="flex flex-col gap-1.5">
+      <label class="text-sm font-medium">PLZ</label>
+      <input
+        id="plz"
+        name="plz"
+        type="text"
+        placeholder="8000"
+        required
+        class="input-field"
+      />
+    </div>
+    <div class="flex flex-col gap-1.5 sm:col-span-2">
+      <label class="text-sm font-medium">Ort</label>
+      <input
+        id="ort"
+        name="ort"
+        type="text"
+        placeholder="Zürich"
+        required
+        class="input-field"
+      />
+    </div>
+    <div class="flex flex-col gap-1.5 sm:col-span-2">
+      <label class="text-sm font-medium">Objektzustand</label>
+      <select
+        id="objektzustand"
+        name="objektzustand"
+        required
+        class="input-field cursor-pointer"
+      >
+        <option value="" disabled selected>Bitte wählen...</option>
+        <option value="Neubau">Neubau</option>
+        <option value="Bestehendes Objekt">Bestehendes Objekt</option>
+        <option value="Erweiterung">Erweiterung</option>
+        <option value="Anderes">Anderes</option>
+      </select>
+    </div>
+    <div class="flex flex-col gap-1.5">
+      <label class="text-sm font-medium">Gebäudetyp</label>
+      <select
+        name="gebaeude_typ"
+        required
+        class="input-field cursor-pointer"
+      >
+        <option value="" disabled selected>Bitte wählen...</option>
+        <option value="Einfamilienhaus">Einfamilienhaus</option>
+        <option value="Mehrfamilienhaus">Mehrfamilienhaus</option>
+        <option value="Industrie">Industrie</option>
+      </select>
+    </div>
+    <div
+      id="objektzustand-anderes-field"
+      class="flex hidden flex-col gap-1.5 sm:col-span-3"
+    >
+      <label class="text-sm font-medium">Objektzustand: bitte beschreiben</label>
+      <input
+        name="objektzustand_anderes"
+        type="text"
+        placeholder="Bitte beschreiben..."
+        class="input-field"
+      />
+    </div>
+  </div>
+</div>

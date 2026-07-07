@@ -20,4 +20,8 @@ export const site = {
     vatId: "CHE-295.972.411",
     responsible: "Liridon Cakolli",
   },
+
+  seo: {
+    defaultImage: "/og-image.jpg",
+  },
 }

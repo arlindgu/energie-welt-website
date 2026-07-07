@@ -1,6 +1,7 @@
 import type { APIRoute } from "astro"
 import { Resend } from "resend"
 import { site } from "@/config/site"
+import { jsonError, jsonSuccess } from "@/lib/api-response"
 
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData()
@@ -12,10 +13,7 @@ export const POST: APIRoute = async ({ request }) => {
   const nachricht = data.get("nachricht")?.toString().trim()
 
   if (!vorname || !nachname || !email || !betreff || !nachricht) {
-    return new Response(JSON.stringify({ error: "Alle Felder sind erforderlich." }), {
-      status: 400,
-      headers: { "Content-Type": "application/json" },
-    })
+    return jsonError("Alle Felder sind erforderlich.")
   }
 
   const resend = new Resend(import.meta.env.RESEND_API_KEY)
@@ -36,14 +34,8 @@ export const POST: APIRoute = async ({ request }) => {
 
   if (error) {
     console.error("[contact] Resend error:", error)
-    return new Response(JSON.stringify({ error: "E-Mail konnte nicht gesendet werden.", detail: error.message }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    })
+    return jsonError("E-Mail konnte nicht gesendet werden.", 500, { detail: error.message })
   }
 
-  return new Response(JSON.stringify({ success: true }), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  })
+  return jsonSuccess()
 }
