@@ -8,7 +8,7 @@ import sitemap from "@astrojs/sitemap"
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://energie-welt.ch",
+  site: "https://www.energie-welt.ch",
   output: "static",
   adapter: vercel(),
   integrations: [icon(), sitemap()],

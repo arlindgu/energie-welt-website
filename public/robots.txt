@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://energie-welt.ch/sitemap-index.xml
+Sitemap: https://www.energie-welt.ch/sitemap-index.xml
