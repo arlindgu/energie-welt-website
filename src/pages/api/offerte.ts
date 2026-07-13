@@ -3,6 +3,8 @@ import { Resend } from "resend"
 import { site } from "@/config/site"
 import { jsonError, jsonSuccess } from "@/lib/api-response"
 
+export const prerender = false
+
 export const POST: APIRoute = async ({ request }) => {
   const data = await request.formData()
 
