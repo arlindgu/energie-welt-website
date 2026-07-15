@@ -11,29 +11,27 @@ const stats = [
 ---
 
 <section id="about" class="w-full bg-background px-6 py-28">
-  <div>
-    <div class="flex flex-col items-start justify-between">
-      <h2 class="eyebrow mb-4">Wir gestalten die Energiewende mit</h2>
-      <div>
-        <h3>
-          EnergieWelt bietet seit über zehn Jahren nachhaltige Energieberatung,
-          Umstellung auf erneuerbare Quellen und komplette Installation an.
-        </h3>
-      </br>
-        <h3>Ihr Partner für nachhaltige Energielösungen.</h3>
-      </div>
-      
-      <div class="mt-8 flex gap-4">
-        <a href="/offerte" class="btn-dark inline-flex items-center gap-x-2"
-          >Offerte einholen
-          <ArrowRight />
-        </a>
-        <a href="/offerte" class="btn-white inline-flex items-center gap-x-2">Mehr erfahren</a>
-      </div>
+  <div class="mx-auto max-w-6xl">
+    <h2 class="eyebrow mb-4">Wir gestalten die Energiewende mit</h2>
+    <div>
+      <h3>
+        EnergieWelt bietet seit über zehn Jahren nachhaltige Energieberatung,
+        Umstellung auf erneuerbare Quellen und komplette Installation an.
+      </h3>
     </div>
+    <h3>Ihr Partner für nachhaltige Energielösungen.</h3>
+    <div class="mt-8 flex gap-4">
+    <a href="/offerte" class="btn-dark inline-flex items-center gap-x-2"
+      >Offerte einholen
+      <ArrowRight />
+    </a>
+    <a href="/offerte" class="btn-white inline-flex items-center gap-x-2"
+      >Mehr erfahren</a
+    >
   </div>
-
   <div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-    {stats.map((stat) => <StatCard value={stat.value} label={stat.label} />)}
+  {stats.map((stat) => <StatCard value={stat.value} label={stat.label} />)}
+</div>
   </div>
 </section>
+
