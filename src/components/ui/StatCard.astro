@@ -2,12 +2,45 @@
 interface Props {
   value: string
   label: string
+  image: string
 }
 
-const { value, label } = Astro.props
+const { value, label, image } = Astro.props
 ---
 
-<div class="stat-card bg-foreground">
-  <p class="stat-card-value text-background">{value}</p>
-  <p class="stat-card-label text-background">{label}</p>
+<div class="stat-card relative overflow-hidden bg-foreground">
+  <img
+    src={image}
+    alt=""
+    class="stat-card-image absolute inset-0 h-full w-full object-cover lg:transition-transform lg:duration-300 lg:ease-out lg:will-change-transform"
+  />
+  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+  <p class="stat-card-value relative z-10 text-background">{value}</p>
+  <p class="stat-card-label relative z-10 text-background">{label}</p>
 </div>
+
+<script>
+  const cards = document.querySelectorAll(".stat-card")
+  const isDesktop = () => window.matchMedia("(min-width: 64rem)").matches
+
+  cards.forEach((card) => {
+    if (!(card instanceof HTMLElement)) return
+
+    const image = card.querySelector(".stat-card-image")
+    if (!(image instanceof HTMLElement)) return
+
+    card.addEventListener("mousemove", (e) => {
+      if (!isDesktop()) return
+
+      const rect = card.getBoundingClientRect()
+      const relX = (e.clientX - rect.left) / rect.width - 0.5
+      const relY = (e.clientY - rect.top) / rect.height - 0.5
+
+      image.style.transform = `scale(1.1) translate(${relX * -20}px, ${relY * -20}px)`
+    })
+
+    card.addEventListener("mouseleave", () => {
+      image.style.transform = ""
+    })
+  })
+</script>

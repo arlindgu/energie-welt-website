@@ -2,19 +2,61 @@
 import { site } from "@/config/site"
 ---
 
-<section class="w-full bg-background px-6 py-28">
-    <div class="mx-auto max-w-6xl">
-        <div class="flex flex-col items-center gap-4 bg-brand-300 px-6 py-20 text-center text-background">
-            <h2>
-                Wir brauchen diese Veränderung,<br />denn die Zukunft wartet nicht.
-            </h2>
-            <p class="mx-auto mb-4 max-w-xl text-lg leading-relaxed text-background/80">
-                Vereinbaren Sie ein kostenloses Erstgespräch mit unseren Experten
-                und erfahren Sie, wie EnergieWelt Ihnen helfen kann.
-            </p>
-            <div class="flex flex-col justify-center gap-4 sm:flex-row">
-                <a href="/offerte" class="btn-dark">Offerte einholen</a>
-            </div>
+<section class="w-full bg-background py-24">
+    <div class="cta-parallax relative flex h-screen w-full flex-col items-center justify-start gap-4 overflow-hidden px-6 pt-24 text-center text-background lg:pt-32">
+        <img
+            class="absolute inset-0 z-0 h-full w-full object-cover"
+            style="mask-image: linear-gradient(to bottom, transparent, black 45%)"
+            src="/bg-sky.jpg"
+            alt=""
+        />
+        <img
+            class="cta-parallax-image pointer-events-none absolute -top-[20%] left-0 z-20 h-[140%] w-full object-cover object-bottom"
+            src="/house.png"
+            alt=""
+        />
+        <h2 class="relative z-10 text-foreground">
+            Wir brauchen diese Veränderung,<br />denn die Zukunft wartet nicht.
+        </h2>
+        <p class="relative z-10 mx-auto mb-4 max-w-xl text-lg leading-relaxed text-foreground">
+            Vereinbaren Sie ein kostenloses Erstgespräch mit unseren Experten
+            und erfahren Sie, wie EnergieWelt Ihnen helfen kann.
+        </p>
+        <div class="relative z-10 flex flex-col justify-center gap-4 sm:flex-row">
+            <a href="/offerte" class="btn-dark z-100">Offerte einholen</a>
         </div>
     </div>
 </section>
+
+<script>
+    const section = document.querySelector(".cta-parallax")
+    const image = section?.querySelector(".cta-parallax-image")
+
+    if (section instanceof HTMLElement && image instanceof HTMLElement) {
+        let ticking = false
+
+        const updateParallax = () => {
+            const rect = section.getBoundingClientRect()
+            const progress =
+                (window.innerHeight - rect.top) / (window.innerHeight + rect.height)
+            const clamped = Math.min(Math.max(progress, 0), 1)
+            const offset = (clamped - 1) * rect.height * 0.18
+
+            image.style.transform = `translateY(${offset}px)`
+            ticking = false
+        }
+
+        window.addEventListener(
+            "scroll",
+            () => {
+                if (!ticking) {
+                    requestAnimationFrame(updateParallax)
+                    ticking = true
+                }
+            },
+            { passive: true },
+        )
+
+        updateParallax()
+    }
+</script>

@@ -41,12 +41,17 @@ const content = [
 
     <div class="mt-12 flex flex-col gap-4 lg:flex lg:flex-row">
       {
-        content.map((item) => (
-          <div class="relative h-96 w-full overflow-hidden lg:flex-1">
+        content.map((item, index) => (
+          <div
+            class:list={[
+              "service-tile relative h-96 w-full overflow-hidden lg:cursor-pointer lg:transition-[flex-grow] lg:duration-500 lg:ease-in-out",
+              index === 0 ? "lg:flex-[3]" : "lg:flex-1",
+            ]}
+          >
             <img
               src={item.image}
               alt={item.title}
-              class="absolute inset-0 h-full w-full object-cover"
+              class="service-image absolute inset-0 h-full w-full object-cover lg:transition-transform lg:duration-300 lg:ease-out lg:will-change-transform"
             />
             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
             <div class="absolute right-0 bottom-0 left-0 flex items-end justify-between p-6">
@@ -61,3 +66,35 @@ const content = [
     </div>
   </div>
 </section>
+
+<script>
+  const tiles = document.querySelectorAll(".service-tile")
+
+  const isDesktop = () => window.matchMedia("(min-width: 64rem)").matches
+
+  tiles.forEach((tile) => {
+    if (!(tile instanceof HTMLElement)) return
+
+    tile.addEventListener("click", () => {
+      tiles.forEach((t) => t.classList.replace("lg:flex-[3]", "lg:flex-1"))
+      tile.classList.replace("lg:flex-1", "lg:flex-[3]")
+    })
+
+    const image = tile.querySelector(".service-image")
+    if (!(image instanceof HTMLElement)) return
+
+    tile.addEventListener("mousemove", (e) => {
+      if (!isDesktop()) return
+
+      const rect = tile.getBoundingClientRect()
+      const relX = (e.clientX - rect.left) / rect.width - 0.5
+      const relY = (e.clientY - rect.top) / rect.height - 0.5
+
+      image.style.transform = `scale(1.1) translate(${relX * -20}px, ${relY * -20}px)`
+    })
+
+    tile.addEventListener("mouseleave", () => {
+      image.style.transform = ""
+    })
+  })
+</script>

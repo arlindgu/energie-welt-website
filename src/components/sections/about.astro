@@ -3,10 +3,10 @@ import StatCard from "@/components/ui/StatCard.astro"
 import { ArrowRight } from "@lucide/astro"
 
 const stats = [
-  { value: "10+", label: "Jahre Erfahrung" },
-  { value: "100+", label: "Projekte" },
-  { value: "99%", label: "Kundenzufriedenheit" },
-  { value: "24/7", label: "Kundensupport" },
+  { value: "10+", label: "Jahre Erfahrung", image: "/solar-1.jpg" },
+  { value: "100+", label: "Projekte", image: "/solar-2.jpg" },
+  { value: "99%", label: "Kundenzufriedenheit", image: "/solar-3.jpg" },
+  { value: "24/7", label: "Kundensupport", image: "/services-1.jpg" },
 ]
 ---
 
@@ -30,7 +30,7 @@ const stats = [
     >
   </div>
   <div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-  {stats.map((stat) => <StatCard value={stat.value} label={stat.label} />)}
+  {stats.map((stat) => <StatCard value={stat.value} label={stat.label} image={stat.image} />)}
 </div>
   </div>
 </section>
