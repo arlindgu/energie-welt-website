@@ -7,7 +7,7 @@ interface Props {
 const { value, label } = Astro.props
 ---
 
-<div class="stat-card bg-background">
-  <p class="stat-card-value">{value}</p>
-  <p class="stat-card-label">{label}</p>
+<div class="stat-card bg-foreground">
+  <p class="stat-card-value text-background">{value}</p>
+  <p class="stat-card-label text-background">{label}</p>
 </div>

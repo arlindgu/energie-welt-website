@@ -27,8 +27,11 @@ import Partners from "./partners.astro"
       > Wir machen daraus Energie für Ihr Zuhause.
     </h1>
     <div class="mt-6 flex gap-4">
-      <a id="hero-button" href="/offerte" class="animated btn-primary"
+      <a id="hero-primary-button" href="/offerte" class="animated btn-primary"
         >Offerte einholen</a
+      >
+      <a id="hero-secondary-button" href="/offerte" class="animated btn-secondary"
+        >Mehr erfahren</a
       >
     </div>
   </div>
@@ -38,7 +41,8 @@ import Partners from "./partners.astro"
   import { gsap } from "gsap"
 
   const title = document.getElementById("hero-text")
-  const button = document.getElementById("hero-button")
+  const buttonPrimary = document.getElementById("hero-primary-button")
+  const buttonSecondary = document.getElementById("hero-secondary-button")
   const heroSection = document.getElementById("hero")
   const myTimeline = gsap.timeline()
 
@@ -58,7 +62,14 @@ import Partners from "./partners.astro"
       duration: 0.5,
       ease: "power2.out",
     })
-    .to(button, {
+    .to(buttonPrimary, {
+      opacity: 1,
+      y: 0,
+      filter: "blur(0px)",
+      duration: 0.5,
+      ease: "power2.out",
+    })
+    .to(buttonSecondary, {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",

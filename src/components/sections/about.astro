@@ -1,5 +1,6 @@
 ---
 import StatCard from "@/components/ui/StatCard.astro"
+import { ArrowRight } from "@lucide/astro"
 
 const stats = [
   { value: "10+", label: "Jahre Erfahrung" },
@@ -9,28 +10,30 @@ const stats = [
 ]
 ---
 
-<section id="about" class="w-full bg-background py-28 px-6">
-  <div class="max-w-6xl mx-auto">
-    <div class="flex flex-col lg:flex-row justify-between items-start gap-4">
-      <h2>
-        Wir gestalten die<br />Energiewende mit
-      </h2>
-      <div class="max-w-lg">
-        <p class="text-muted-foreground leading-relaxed mb-5">
-          EnergieWelt ist Ihr Partner für moderne, nachhaltige Energielösungen.
-          Seit über einem Jahrzehnt helfen wir Privathaushalten und Unternehmen,
-          ihren Energieverbrauch zu optimieren und auf erneuerbare Quellen umzustellen.
-        </p>
-        <p class="text-muted-foreground leading-relaxed">
-          Unser Team aus erfahrenen Energieberatern und Ingenieuren steht Ihnen
-          bei jedem Schritt zur Seite, von der ersten Beratung bis zur vollständigen
-          Installation und darüber hinaus.
-        </p>
+<section id="about" class="w-full bg-background px-6 py-28">
+  <div>
+    <div class="flex flex-col items-start justify-between">
+      <h2 class="eyebrow mb-4">Wir gestalten die Energiewende mit</h2>
+      <div>
+        <h3>
+          EnergieWelt bietet seit über zehn Jahren nachhaltige Energieberatung,
+          Umstellung auf erneuerbare Quellen und komplette Installation an.
+        </h3>
+      </br>
+        <h3>Ihr Partner für nachhaltige Energielösungen.</h3>
+      </div>
+      
+      <div class="mt-8 flex gap-4">
+        <a href="/offerte" class="btn-dark inline-flex items-center gap-x-2"
+          >Offerte einholen
+          <ArrowRight />
+        </a>
+        <a href="/offerte" class="btn-white inline-flex items-center gap-x-2">Mehr erfahren</a>
       </div>
     </div>
+  </div>
 
-    <div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {stats.map((stat) => <StatCard value={stat.value} label={stat.label}/>)}
-    </div>
+  <div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {stats.map((stat) => <StatCard value={stat.value} label={stat.label} />)}
   </div>
 </section>

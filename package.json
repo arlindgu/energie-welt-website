@@ -18,6 +18,7 @@
     "@astrojs/vercel": "^10.0.8",
     "@fontsource-variable/geist": "^5.2.9",
     "@iconify-json/lucide": "^1.2.113",
+    "@lucide/astro": "^1.24.0",
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^6.4.7",
     "astro-icon": "^1.1.5",
