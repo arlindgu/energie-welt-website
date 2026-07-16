@@ -59,16 +59,16 @@
 }
 
 @layer components {
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  background-color: var(--color-brand-300);
-  padding: 1em 1.5em;
-  line-height: 1;
-  color: var(--color-background);
-}
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--color-brand-300);
+    padding: 1em 1.5em;
+    line-height: 1;
+    color: var(--color-background);
+  }
 
   .btn-primary:hover {
     transition:
@@ -84,7 +84,7 @@
     display: inline-block;
     line-height: 1;
     color: var(--color-background);
-    border: 2px solid var(--color-background)
+    border: 2px solid var(--color-background);
   }
 
   .btn-secondary:hover {
@@ -96,39 +96,45 @@
     color: var(--color-foreground);
   }
 
-.btn-dark {
-  cursor: pointer;
-  background-color: var(--color-foreground);
-  padding: 1em 1.5em;
-  display: inline-block;
-  line-height: 1;
-  color: var(--color-background);
-  border: 2px solid transparent;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
+  .btn-dark {
+    cursor: pointer;
+    background-color: var(--color-foreground);
+    padding: 1em 1.5em;
+    display: inline-block;
+    line-height: 1;
+    color: var(--color-background);
+    border: 2px solid transparent;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease;
+  }
 
-.btn-dark:hover {
-  background-color: var(--color-background);
-  color: var(--color-foreground);
-}
+  .btn-dark:hover {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
 
-.btn-white {
-  cursor: pointer;
-  background-color: var(--color-background);
-  padding: 1em 1.5em;
-  display: inline-block;
-  line-height: 1;
-  color: var(--color-foreground);
-  border: 2px solid transparent;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-  border-color: var(--color-foreground);
-}
+  .btn-white {
+    cursor: pointer;
+    background-color: var(--color-background);
+    padding: 1em 1.5em;
+    display: inline-block;
+    line-height: 1;
+    color: var(--color-foreground);
+    border: 2px solid transparent;
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease,
+      border-color 0.3s ease;
+    border-color: var(--color-foreground);
+  }
 
-.btn-white:hover {
-  background-color: var(--color-foreground);
-  color: var(--color-background);
-  border-color: var(--color-foreground);
-}
+  .btn-white:hover {
+    background-color: var(--color-foreground);
+    color: var(--color-background);
+    border-color: var(--color-foreground);
+  }
 
   .animated {
     opacity: 0;
@@ -149,7 +155,8 @@
   .input-field:focus {
     outline: none;
     border-color: var(--color-brand);
-    box-shadow: 0 0 0 3px color-mix(in oklch, var(--color-brand) 25%, transparent);
+    box-shadow: 0 0 0 3px
+      color-mix(in oklch, var(--color-brand) 25%, transparent);
   }
 
   .checkbox-card {
@@ -223,6 +230,7 @@
     font-family: var(--font-body);
     background-color: var(--color-background);
     color: var(--color-foreground);
+    text-wrap: balance;
   }
 
   h1,
@@ -240,7 +248,7 @@
   }
 
   h1 {
-    font-size: 2.986rem;
+    font-size: clamp(2.4883333333rem, 5vw, 2.986rem);
     font-weight: 500;
     line-height: 1.1;
   }
@@ -252,13 +260,13 @@
   }
 
   h2 {
-    font-size: 2.488rem;
+    font-size: clamp(2.07333333333rem, 5vw, 2.488rem);
     font-weight: 500;
     line-height: 1.1;
   }
 
   h3 {
-    font-size: 2.074rem;
+    font-size: clamp(1.7283333333rem, 5vw, 2.074rem);
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: 0.025rem;
